@@ -8,7 +8,7 @@ from .models import Post
 
 
 def home_page(request):
-    return HttpResponse('<html><title>To-Do lists</title></html>')
+    return render(request, 'base.html')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
