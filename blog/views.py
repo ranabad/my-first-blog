@@ -1,11 +1,14 @@
 # Create your views here.
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
-from .models import Post
-from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect
-from .forms import PostForm
 
+from .forms import PostForm
+from .models import Post
+
+
+def home_page(request):
+    return HttpResponse('<html><title>To-Do lists</title></html>')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
