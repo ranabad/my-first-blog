@@ -1,4 +1,5 @@
-from selenium import webdriver
+#from selenium import webdriver
+"""  
 from selenium.webdriver.common.keys import Keys
 import time
 import unittest
@@ -48,4 +49,4 @@ class NewVisitorTest(unittest.TestCase):
         # methodical)
         self.fail('Finish the test!')
 
-        # The page updates again, and now shows both items on her list
+        # The page updates again, and now shows both items on her list"""
