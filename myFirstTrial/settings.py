@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-usa'
 
-TIME_ZONE = now.datetime.now()
+TIME_ZONE = 'Asia/Aden'
 
 USE_I18N = True
 
