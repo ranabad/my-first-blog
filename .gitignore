@@ -1,11 +1,6 @@
 __pycache__
 *.pyc
 db.sqlite3
-<<<<<<< HEAD
-/static
-.DS_Storegeckodriver.log
 virtualenv
 db.sqlite3
-=======
 geckodriver.log
->>>>>>> feb93e3ef4735d9106d8db2f9de9e932e4a527f9
