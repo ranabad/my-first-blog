@@ -110,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-usa'
 
-now = timezone.now()
+now = timezone.utc()
 
-now = datetime.datetime.now()
+now = datetime.datetime.utcnow()
 
 USE_I18N = True
 
