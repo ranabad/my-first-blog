@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-usa'
 
-now = timezone.utc()
+now = timezone.localtime(timezone.now())
 
 now = datetime.datetime.utcnow()
 
