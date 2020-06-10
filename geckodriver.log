@@ -1061,3 +1061,6 @@ console.warn: services.settings: main/messaging-experiments sync interrupted by 
 1591654742256	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
 1591654743802	Marionette	INFO	Listening on port 55383
 1591654743902	Marionette	WARN	TLS certificate errors will be ignored for this session
+1591779369040	Marionette	INFO	Stopped listening on port 55383
+1591779372276	Marionette	INFO	Stopped listening on port 54861
+1591779375634	Marionette	INFO	Stopped listening on port 55265
