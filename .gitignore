@@ -1,6 +1,6 @@
 __pycache__
 *.pyc
 db.sqlite3
-virtualenv
-db.sqlite3
-geckodriver.log
+mypython
+
+
