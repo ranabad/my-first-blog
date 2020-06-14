@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
 from .forms import CommentForm, PostForm
-from .models import Post, Comment
+from .models import Comment, Post
 
 
 def post_list(request):
