@@ -1,29 +1,28 @@
 .page-header {
-    background-color: rgb(93, 156, 143) !important;
+    background-color: rgb(0, 100, 194);
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: rgb(170, 93, 161) !important;
-    font-size: 72pt !important;
-    text-decoration: underline !important;
-  text-decoration-color: gold !important;
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
 }
 body {
-    padding-left: 35px;
+    padding-left: 15px;
 }
 
 .content {
-    margin-left: 100px;
+    margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'American Typewriter', serif !important;
+    font-family: 'Lobster', cursive;
 }
 
 .date {
-    color: rgb(70, 43, 1 )!important;
+    color: #028282;
 }
 
 .save {
@@ -35,20 +34,20 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color:  rgb(0, 3, 100) !important;
+    color: #ffffff;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
 }
 
 .post {
-    margin-bottom: 70px !important;
+    margin-bottom: 70px;
 }
 
 .post h2 a, .post h2 a:visited {
-    color: rgb(170, 93, 161) !important;
+    color: #028282
 }
 .comment {
-    margin: 20px 0px 20px 20px !important;
+    margin: 20px 0px 20px 20px;
 }
 
