@@ -9,6 +9,8 @@
 {       color: white;
         font-size: 52pt;
         text-decoration: none; 
+        font-family: 'Cambria',serif;
+
 
 
 }
@@ -26,31 +28,31 @@ h1, h2, h3, h4
 }
 .date
 { /*green */
-        color: #61892F;
+       color: green;
         
 }
     
     
 .post h2 a, .post h2 a:visited 
 {
-         color: red;
-         background-color: red; 
+        color: green;
+         background-color: green
         
 }
 
 body 
 {
+        
+        font-family: 'Cambria',serif;
         padding-left: 40px;
         background-color: #222629; 
-        
-        
 
 }
 
 .save 
 { /*green fag3*/
         float: right;
-        color:#86C232;
+        color: green;
 }
 
 .post-form textarea, .post-form input 
@@ -70,7 +72,7 @@ body
 .post 
 {
         
-        color:#86C232; 
+        color: green; 
         margin-bottom: 70px;
 }
 
@@ -78,7 +80,7 @@ body
 .comment 
 {
       
-      color:#86C232;
+        color: green;
       margin: 20px 0px 20px 20px;
 }
 
@@ -99,5 +101,5 @@ a:link {
       
       /* selected link */
       a:active {
-        color: blue;
+        color: green;
       }
