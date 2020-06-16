@@ -48,6 +48,7 @@ body
 .post-form textarea, .post-form input 
 {
         width: 100%;
+        color: #000;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited 
