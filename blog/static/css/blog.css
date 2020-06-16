@@ -31,6 +31,7 @@ h1, h2, h3, h4
 .date
 { /*green */
        color: green;
+       font-size: 9pt;
         
 }
     
@@ -45,7 +46,7 @@ h1, h2, h3, h4
 body 
 {
         
-        font-size: 17pt;
+        font-size: 13pt;
         font-family: 'Cambria',serif;
         padding-left: 40px;
         background-color: #222629; 
@@ -82,8 +83,8 @@ body
 
 .comment 
 {
-      
-        color: green;
+        font-size: 9pt;
+       color: green;
       margin: 20px 0px 20px 20px;
 }
 
