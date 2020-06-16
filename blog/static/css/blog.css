@@ -16,9 +16,7 @@
 }
 .content 
 {
-        font-size: 28pt;
-        font-family: 'Cambria',serif; 
-        color: white;   
+
          margin-left: 40px;
          
 
@@ -75,7 +73,12 @@ body
         font-size: 15pt;
         margin-right: 30px;
 }
-
+.post.title
+{
+        font-size: 28pt;
+        font-family: 'Cambria',serif; 
+        color: white;    
+}
 
 .post 
 {
