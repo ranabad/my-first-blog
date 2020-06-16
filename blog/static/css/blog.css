@@ -1,14 +1,16 @@
 .page-header 
 {
         
-         background-color: #265077; 
+         background-color: #222629; 
          margin-top: 0;
          padding: 20px 20px 20px 40px;
 }
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active 
-{       color: #022140;
-        font-size: 36pt;
+{       color: white;
+        font-size: 52pt;
         text-decoration: none; 
+
+
 }
 .content 
 {
@@ -20,29 +22,34 @@
 h1, h2, h3, h4 
 {
         font-family: 'Lobster', cursive;
+        color: white;
 }
 .date
-{
-        color: #828282;
+{ /*green */
+        color: #61892F;
+        
 }
     
     
 .post h2 a, .post h2 a:visited 
 {
-         color: #1e4258;
+         color: red
 }
 
 body 
 {
         padding-left: 40px;
-        background-color: #265077; 
+        background-color: #222629; 
+        
         
 
 }
 
 .save 
-{
+{ /*green fag3*/
         float: right;
+        color: white;
+        background-color:#86C232;
 }
 
 .post-form textarea, .post-form input 
@@ -53,7 +60,7 @@ body
 
 .top-menu, .top-menu:hover, .top-menu:visited 
 {
-        color: #2D5F5D;
+        color: white;
         float: right;
         font-size: 15pt;
         margin-right: 30px;
@@ -61,17 +68,21 @@ body
 
 .post 
 {
-       margin-bottom: 70px;
+        color: white;
+        background-color:#86C232; 
+        margin-bottom: 70px;
 }
 
 
 .comment 
 {
+      color: white;
+      background-color:#86C232;
       margin: 20px 0px 20px 20px;
 }
 /* unvisited link */
 a:link {
-        color: red;
+        color: green;
       }
       
       /* visited link */
