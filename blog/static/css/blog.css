@@ -6,7 +6,7 @@
          padding: 20px 20px 20px 40px;
 }
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active 
-{       color: #ffffff;
+{       color: #022140;
         font-size: 36pt;
         text-decoration: none; 
 }
@@ -27,7 +27,7 @@ h1, h2, h3, h4
     
 .post h2 a, .post h2 a:visited 
 {
-         color: #000000;
+         color: #1e4258;
 }
 
 body 
