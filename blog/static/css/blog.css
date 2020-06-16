@@ -16,6 +16,7 @@
 }
 .content 
 {
+
          margin-left: 40px;
          
 
@@ -23,6 +24,7 @@
 }
 h1, h2, h3, h4 
 {
+        font-size: 36pt;
         font-family: 'Cambria',serif; 
         color: white;
 }
@@ -42,6 +44,7 @@ h1, h2, h3, h4
 
 body 
 {
+        
         
         font-family: 'Cambria',serif;
         padding-left: 40px;
