@@ -48,8 +48,7 @@ body
 .save 
 { /*green fag3*/
         float: right;
-        color: white;
-        background-color:#86C232;
+        color:#86C232;
 }
 
 .post-form textarea, .post-form input 
@@ -68,16 +67,16 @@ body
 
 .post 
 {
-        color: white;
-        background-color:#86C232; 
+        
+        color:#86C232; 
         margin-bottom: 70px;
 }
 
 
 .comment 
 {
-      color: white;
-      background-color:#86C232;
+      
+      color:#86C232;
       margin: 20px 0px 20px 20px;
 }
 /* unvisited link */
