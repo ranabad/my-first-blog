@@ -24,7 +24,7 @@
 }
 h1, h2, h3, h4 
 {
-        font-size: 36pt;
+        font-size: 28pt;
         font-family: 'Cambria',serif; 
         color: white;
 }
@@ -45,7 +45,7 @@ h1, h2, h3, h4
 body 
 {
         
-        
+        font-size: 17pt;
         font-family: 'Cambria',serif;
         padding-left: 40px;
         background-color: #222629; 
@@ -99,7 +99,7 @@ a:link {
       
       /* mouse over link */
       a:hover {
-        color: hotpink;
+        color: #6b6e70;
       }
       
       /* selected link */
