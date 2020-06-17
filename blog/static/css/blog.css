@@ -2,6 +2,7 @@
 {
         border: outset 15px color #86C232 ;
          background-color: #222629; 
+         background-image: url(/static/css/Untitled-5\ copy.jpg);
          margin-top: 0;
          padding: 20px 20px 20px 40px;
 }
@@ -50,7 +51,8 @@ body
         font-size: 13pt;
         font-family: 'Cambria',serif;
         padding-left: 40px;
-        background-color: #222629; 
+        background-color: #222629;
+        background-image: url(/static/css/Untitled-5\ copy.jpg);
 
 }
 
