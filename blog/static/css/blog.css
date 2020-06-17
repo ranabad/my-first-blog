@@ -1,10 +1,7 @@
 .page-header 
 {
-         border: outset 15px color #86C232 ;
+        border: outset 15px color #86C232 ;
          background-color: #222629; 
-         background-image: url(‘css/cover.jpg’);
-         background-size: cover;
-         background-repeat: no-repeat;
          margin-top: 0;
          padding: 20px 20px 20px 40px;
 }
@@ -21,9 +18,6 @@
 {
 
          margin-left: 40px;
-         background-image: url(‘css/cover.jpg’);
-         background-size: cover;
-         background-repeat: no-repeat;
          
 
 
@@ -57,10 +51,6 @@ body
         font-family: 'Cambria',serif;
         padding-left: 40px;
         background-color: #222629;
-         background-image: url(‘css/cover.jpg’);
-         background-size: cover;
-         background-repeat: no-repeat;
-        
         
 
 }
@@ -125,7 +115,15 @@ a:link {
       a:active {
         color: green;
       }
-      
+     
+.tdStyle
+{
+background-image:url('static/css/cover.jpg');
+background-repeat:no-repeat;
+background-size:100%;
+}
+
+
 
       
        
