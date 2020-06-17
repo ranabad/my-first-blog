@@ -117,7 +117,7 @@ a:link {
       }
       .background
       {
-        background-image: url(‘css/cover.jpg’);
+        background-color: red;
         background-size: cover;
         background-repeat: no-repeat;
       }
