@@ -4855,11 +4855,7 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
-.banner{
-  background-image: url(‘css/cover.jpg’);
-  background-size: cover;
-  background-repeat: no-repeat;
- }  
+
 .jumbotron {
   padding: 30px 15px;
   margin-bottom: 30px;
