@@ -116,8 +116,5 @@ a:link {
         color: green;
       }
 
-      .jumbotron{
-        background-image: url(‘css/cover.jpg’);
-        background-size: cover;
-        background-repeat: no-repeat;
-       }     
+      
+       
