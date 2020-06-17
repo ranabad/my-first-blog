@@ -1405,7 +1405,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 15px solid #86C232;
+  border-bottom: 1px solid #eee;
 }
 ul,
 ol {
@@ -4855,7 +4855,6 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
-
 .jumbotron {
   padding: 30px 15px;
   margin-bottom: 30px;

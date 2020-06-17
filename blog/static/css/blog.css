@@ -1,7 +1,9 @@
 .page-header 
 {
-        border: outset 15px color #86C232 ;
+        
          background-color: #222629; 
+         padding-bottom: 9px;
+         border-bottom: 15px solid #86C232;
          margin-top: 0;
          padding: 20px 20px 20px 40px;
 }
