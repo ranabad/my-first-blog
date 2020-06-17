@@ -9,8 +9,14 @@
         <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
+    <style> body
+        {
+        background-image:url('{%static "css/cover.jpg"%}');
+        background-repeat:no-repeat;
+        background-size:100%;
+        } </style>
     <body>
-        <td class="tdStyle"></td>
+        
             <div class="page-header">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
