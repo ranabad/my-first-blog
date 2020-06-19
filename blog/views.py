@@ -7,6 +7,9 @@ from django.utils import timezone
 from .forms import CommentForm, PostForm
 from .models import Comment, Post
 
+def InteractiveCV(request):
+
+    return render(request, 'blog/InteractiveCv/cv.html')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
