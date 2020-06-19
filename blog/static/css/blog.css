@@ -99,12 +99,12 @@ body
 
 /* unvisited link */
 a:link {
-        color: purple;
+        color: #6b6e70;
       }
       
       /* visited link */
       a:visited {
-        color: red
+        color: #6b6e70
       }
       
       /* mouse over link */
@@ -114,7 +114,7 @@ a:link {
       
       /* selected link */
       a:active {
-        color: yellow;
+        color: #6b6e70;
       }
      
 
