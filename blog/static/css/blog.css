@@ -109,7 +109,7 @@ a:link {
       
       /* mouse over link */
       a:hover {
-        color: #6b6e70;
+        color: red;
       }
       
       /* selected link */
