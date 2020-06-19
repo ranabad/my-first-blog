@@ -38,7 +38,7 @@ h1, h2, h3, h4
 }
     
     
-.post h2 a, .post h2 a:visited 
+.post h2 a:visited, .post h2 a:visited 
 {
         color: white;
          background-color: white
