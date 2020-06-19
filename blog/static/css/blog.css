@@ -77,14 +77,14 @@ body
 }
 .post.title
 {
-        font-size: 72pt;
+        font-size: 28pt;
         font-family: 'Cambria',serif; 
-        color: red;    
+        color: white;    
 }
 
 .post 
 {
-        color: red;
+        color: green;
         
         margin-bottom: 70px;
 }
@@ -99,22 +99,22 @@ body
 
 /* unvisited link */
 a:link {
-        color: #6b6e70;
+        color: white;
       }
       
       /* visited link */
       a:visited {
-        color: #6b6e70
+        color: white
       }
       
       /* mouse over link */
       a:hover {
-        color: red;
+        color: #6b6e70;
       }
       
       /* selected link */
       a:active {
-        color: #6b6e70;
+        color: white;
       }
      
 
