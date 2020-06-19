@@ -120,9 +120,10 @@ a:link {
 
 
       .btn-default {
-        color: #333;
+        color: white;
         background-color:green;
-        border-color: red;
+        border-color: green;
+        border-width: 30px;
       }
    
 
