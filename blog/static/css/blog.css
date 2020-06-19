@@ -84,15 +84,15 @@ body
 }
 .post.title
 {
-        font-size: 28pt;
+        font-size: 72pt;
         font-family: 'Cambria',serif; 
-        color: white;    
+        color: red;    
 }
 
 .post 
 {
+        color: red;
         
-        color: green; 
         margin-bottom: 70px;
 }
 
