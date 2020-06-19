@@ -41,7 +41,7 @@ h1, h2, h3, h4
 .post h2 a:visited, .post h2 a:visited 
 {
         color: white;
-         background-color: white
+        
         
 }
 
@@ -60,7 +60,7 @@ body
 { /*green fag3*/
         float: right;
         color: white;
-        background-color: #4CAF50;
+        
 }
 
 .post-form textarea, .post-form input 
@@ -95,7 +95,7 @@ body
         font-size: 9pt;
        color: white;
       margin: 20px 0px 20px 20px;
-      background-color: #4CAF50;
+     
 }
 
 /* unvisited link */
@@ -117,7 +117,13 @@ a:link {
       a:active {
         color: white;
       }
-     
+
+
+      .btn-default {
+        color: #333;
+        background-color:green;
+        border-color: #ccc;
+      }
    
 
 
