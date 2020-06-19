@@ -59,7 +59,8 @@ body
 .save 
 { /*green fag3*/
         float: right;
-        color: green;
+        color: white;
+        background-color: #4CAF50;
 }
 
 .post-form textarea, .post-form input 
@@ -84,8 +85,8 @@ body
 
 .post 
 {
-        color: green;
-        
+        color: white;
+        background-color: #4CAF50;
         margin-bottom: 70px;
 }
 
@@ -93,8 +94,9 @@ body
 .comment 
 {
         font-size: 9pt;
-       color: green;
+       color: white;
       margin: 20px 0px 20px 20px;
+      background-color: #4CAF50;
 }
 
 /* unvisited link */
@@ -117,16 +119,7 @@ a:link {
         color: white;
       }
      
-      .button {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-      }    
+   
 
 
 
