@@ -169,6 +169,24 @@ border-color: green;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
+.save.btn-default
+{
+        color: white;
+      background-color:green;
+      border-color: green;
+
+}
+.save.btn-default:hover,
+.save.btn-default:focus,
+.save.btn-default.focus,
+.save.btn-default:active,
+.save.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
    
 
 
