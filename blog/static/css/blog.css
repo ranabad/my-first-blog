@@ -47,8 +47,13 @@ h1, h2, h3, h4
 
 body 
 {
-        
-        
+        background-image:url('{%static "css/cover.jpg"%}');
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 1920px;
+        min-width: 1080px;
         font-size: 13pt;
         font-family: 'Cambria',serif;
         background-color: #222629;
@@ -121,7 +126,7 @@ a:link {
 
 .btn-default{
  color: white;
-background-color:red;
+background-color:black;
 border-color: green;
         
 }
