@@ -119,7 +119,7 @@ a:link {
       }
 
 
-      .btn-default, .btn-default a:active, .btn-default a:visited, .btn-default a:link {
+      .btn-default, .btn-default a:active, .btn-default a:visited, .btn-default a:link ,  .btn-default a:hover{
         color: white;
         background-color:green !important;
         border-color: green;
