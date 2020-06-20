@@ -186,7 +186,7 @@ border-color: green;
   background-color: #e6e6e6;
   border-color: #e6e6e6;
 }
-.content-container
+.content-container,.body
 {
         background-image:url('{%static "css/cover.jpg"%}');
         background-attachment: fixed;
