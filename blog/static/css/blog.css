@@ -186,16 +186,7 @@ border-color: green;
   background-color: #e6e6e6;
   border-color: #e6e6e6;
 }
-.button,
-.html input[type="button"],
-.input[type="reset"],
-.input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-  color: white;
-      background-color:green;
-      border-color: green;
-}
+
 
 
    
