@@ -65,12 +65,15 @@ body
 { /*green fag3*/
         float: right;
         color: white;
+        background-color: green;
         
 }
 
 .post-form textarea, .post-form input 
 {
         width: 100%;
+        color: black;
+
        
 }
 
