@@ -165,9 +165,9 @@ border-color: green;
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #333;
+  color: green;
   background-color: #e6e6e6;
-  border-color: #adadad;
+  border-color: #e6e6e6;
 }
 .save.btn-default
 {
@@ -182,9 +182,9 @@ border-color: green;
 .save.btn-default:active,
 .save.btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #333;
+  color: green;
   background-color: #e6e6e6;
-  border-color: #adadad;
+  border-color: #e6e6e6;
 }
 
    
