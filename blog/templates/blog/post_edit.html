@@ -1,6 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<style>.btn-default{
+    color: white;
+   background-color:black;
+   border-color: green;
+           
+   }</style>
     <h2 style="color:white;">New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}

@@ -7,6 +7,12 @@
         {{ post.published_date }}
     </div>
 {% else %}
+<style>.btn-default{
+    color: white;
+   background-color:black;
+   border-color: green;
+           
+   }</style>
     <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 {% endif %}
         {% if user.is_authenticated %}
