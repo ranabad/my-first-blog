@@ -18,12 +18,24 @@
         background-attachment: fixed;
         background-size: cover;
         min-height: 1920px;
-        height:100%;
-        width: 100%;
-        overflow-y: scroll;
-        overflow-x: scroll;
         min-width: 1080px;
         } </style>
+
+<style>@media screen and (max-width: 767px) {
+    .table-responsive {
+      background-image:url('{%static "css/cover.jpg"%}');
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;  
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      border:none;
+    }</style>
+        
     <body>
         
             <div class="page-header">
