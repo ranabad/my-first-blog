@@ -2,8 +2,14 @@
 {
         
          background-color: #222629; 
+         background-blend-mode: luminosity;
          padding-bottom: 9px;
-         border-bottom: none;
+         border-bottom: 10px;
+         border-right: 9px;
+         border-left: 9px;
+         border-right: 10px;
+         border-color: greenyellow;
+
          margin-top: 0;
          padding: 20px 20px 20px 40px;
 }
