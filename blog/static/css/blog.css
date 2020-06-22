@@ -2,14 +2,8 @@
 {
         
          background-color: #222629; 
-         background-blend-mode: luminosity;
          padding-bottom: 9px;
-         border-bottom: 10px;
-         border-right: 9px;
-         border-left: 9px;
-         border-right: 10px;
-         border-color: greenyellow;
-
+         border-bottom: none;
          margin-top: 0;
          padding: 20px 20px 20px 40px;
 }
@@ -53,11 +47,7 @@ h1, h2, h3, h4
 
 body 
 {
-        background-image:url('{%static "css/cover.jpg"%}');
-        background-attachment: fixed;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        
         min-height: 1920px;
         min-width: 1080px;
         font-size: 13pt;
@@ -192,7 +182,17 @@ border-color: green;
   background-color: #e6e6e6;
   border-color: #e6e6e6;
 }
-
+.body,.content,.div,div
+        {
+        background-image:url('{%static "css/Safiaalsalehdesigner1.jpg"%}');
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        min-height: 1920px;
+        min-width: 1080px;
+        }
 
 
    
