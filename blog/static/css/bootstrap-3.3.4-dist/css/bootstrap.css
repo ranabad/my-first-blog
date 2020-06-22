@@ -4855,6 +4855,7 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+
 .jumbotron {
   padding: 30px 15px;
   margin-bottom: 30px;
@@ -4882,7 +4883,7 @@ a.badge:focus {
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding: 1080px 0;
+    padding: 48px 0;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
