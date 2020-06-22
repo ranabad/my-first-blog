@@ -10,8 +10,9 @@
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active 
 {       color: white;
         font-size: 52pt;
-        text-decoration: none; 
+        text-decoration:none;
         font-family: 'Cambria',serif;
+        text-align: center;
 
 
 
@@ -182,17 +183,7 @@ border-color: green;
   background-color: #e6e6e6;
   border-color: #e6e6e6;
 }
-.body,.content,.div,div
-        {
-        background-image:url('{%static "css/Safiaalsalehdesigner1.jpg"%}');
-        background-attachment: fixed;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        min-height: 1920px;
-        min-width: 1080px;
-        }
+
 
 
    
