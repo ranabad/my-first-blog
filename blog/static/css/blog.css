@@ -183,7 +183,10 @@ border-color: green;
   background-color: #e6e6e6;
   border-color: #e6e6e6;
 }
-@function background-focus($ratio, $bg, $box: 50) 
-{
-        @return (($bg + (50 - $box)/$ratio - 50) * ($ratio / ($ratio - 1)) + 50) * 1%;
+
+@media screen and (max-width:640px){
+       #body{
+        width:100%;
+       } 
+
 }
