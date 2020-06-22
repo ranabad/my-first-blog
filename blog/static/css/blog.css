@@ -179,7 +179,7 @@ border-color: green;
   border-color: #e6e6e6;
 }
 
-@media screen and (max-width:640px){
+@media screen and (max-width:300px){
        #body{
         width:100%;
        } 
