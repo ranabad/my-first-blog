@@ -51,12 +51,6 @@ body {
         font-size: 13pt;
         font-family: 'Cambria',serif;
         background-color: #222629;
-        background-image:url('{%static "css/Safiaalsalehdesigner1.jpg"%}');
-        background-attachment: fixed;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
       }
 
 .save 
