@@ -39,9 +39,9 @@ class Comment(models.Model):
 
 @python_2_unicode_compatible
 class CV(models.Model):
-    first_name=models.CharField(_("First name")), max_length=40)
-    last_name=models.CharField(_("First name")), max_length=40)
-    email=models.EmailField(_("Email"))
+    first_name=models.CharField(max_length=40))
+    last_name=models.CharField(max_length=40)
+    email=models.EmailField("Email")
 
     def __str__(self):
         return self.first_name+" "+self.last_name
