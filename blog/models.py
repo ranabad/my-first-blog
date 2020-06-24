@@ -38,7 +38,7 @@ class Comment(models.Model):
         return self.text
 
 @python_2_unicode_compatible
-class CV(models.Model)
+class CV(models.Model):
     first_name=models.CharField(_("First name")), max_length=40)
     last_name=models.CharField(_("First name")), max_length=40)
     email=models.EmailField(_("Email"))
@@ -46,7 +46,7 @@ class CV(models.Model)
     def __str__(self):
         return self.first_name+" "+self.last_name
 @python_2_unicode_compatible
-class Experince(models.Model)
+class Experince(models.Model):
     cv=models.ForeignKey(CV)
     from_date=models.DateField(_("From"))
     till_date=models.DateField(_("Till")),null=True, blank=True)
