@@ -1,11 +1,11 @@
 # Create your models here.
+from __future__ import unicode_literals
+
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
-from __future__ import unicode_literals
-from django.utils.translation import ugettext_lazy as_
 from django.utils.encoding import python_2_unicode_compatible
-
+#from django.utils.translation import as_, ugettext_lazy
 
 
 class Post(models.Model):
@@ -66,5 +66,3 @@ class Experince(models.Model)
         }   
 class Meta:
     ordering=("- from_date",)
-                
-
