@@ -96,3 +96,7 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 196: Error: 
 1593954888288	Marionette	INFO	Listening on port 64515
 1593954888303	Marionette	WARN	TLS certificate errors will be ignored for this session
 1593954889298	Marionette	INFO	Stopped listening on port 64515
+1593957787931	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/62/v30rcq5d79v77qxrzg4xcrd40000gn/T/rust_mozprofileAgi5WE"
+1593957790851	Marionette	INFO	Listening on port 64947
+1593957790913	Marionette	WARN	TLS certificate errors will be ignored for this session
+1593957791681	Marionette	INFO	Stopped listening on port 64947
