@@ -9,7 +9,7 @@ from .models import Comment, Post
 
 def InteractiveCV(request):
 
-    return render(request, '../InteractiveCv/cv.html')
+    return render(request, 'blog/InteractiveCV/cv.html')
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
