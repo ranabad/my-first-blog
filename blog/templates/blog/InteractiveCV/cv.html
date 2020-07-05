@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   
-    <h1>Rana AL Badrani HEYYYYYYY </h1>
+    <h1>Rana AL Badrani</h1>
 
 
   
@@ -15,9 +15,14 @@
 
 
     <h1>skills </h1>
-
-    <input id="id_new_item" placeholder="Enter a new skill" />
+    
+    <form method="POST">
+        <input id="id_new_item" placeholder="Enter a new skill" />
+        {% csrf_token %}
+    </form>
+   
     <table id="id_list_table">
+        <tr><td>1: {{ new_item_text }}</td></tr>  
     </table>
 
 </body>

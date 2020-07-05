@@ -8,7 +8,8 @@ from .forms import CommentForm, PostForm
 from .models import Comment, Post
 
 def InteractiveCV(request):
-
+    if request.method == 'POST':
+        return HttpResponse(request.POST['item_text'])
     return render(request, 'blog/InteractiveCV/cv.html')
 
 def post_list(request):
