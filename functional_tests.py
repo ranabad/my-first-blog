@@ -5,7 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-
 class NewVisitorTest(unittest.TestCase):  
 
     def setUp(self):  
@@ -46,5 +45,3 @@ class NewVisitorTest(unittest.TestCase):
         self.fail('Finish the test!')
 
         # The page updates again, and now shows both items on her list
-    
-
