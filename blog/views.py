@@ -6,11 +6,15 @@ from django.utils import timezone
 
 from .forms import CommentForm, PostForm
 from .models import Comment, Post
+from blog.models import Item
 
 def InteractiveCV(request):
     if request.method == 'POST':
-        return HttpResponse(request.POST['item_text'])
-    return render(request, 'blog/InteractiveCV/cv.html')
+        Item.objects.create(text=request.POST['item_text'])
+        return redirect('/cv')
+
+    items = Item.objects.all()
+    return render(request, 'blog/InteractiveCV/cv.html', {'items': items})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

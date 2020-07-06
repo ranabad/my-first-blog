@@ -48,6 +48,3 @@ class NewVisitorTest(unittest.TestCase):
         # The page updates again, and now shows both items on her list
     
 
-
-if __name__ == '__main__':  
-    unittest.main(warnings='ignore')  
