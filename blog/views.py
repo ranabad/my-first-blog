@@ -11,7 +11,7 @@ from blog.models import Item
 def InteractiveCV(request):
     if request.method == 'POST':
         Item.objects.create(text=request.POST['item_text'])
-        return redirect('/cv')
+        return redirect('/cv.html')
 
     items = Item.objects.all()
     return render(request, 'blog/InteractiveCV/cv.html', {'items': items})
