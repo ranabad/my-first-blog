@@ -5,15 +5,15 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
 from .forms import CommentForm, PostForm
-from .models import Comment, Post ,Item
+from .models import Comment, Post, Item
 
 def InteractiveCV(request):
-    if request.method == 'POST':
+      if request.method == 'POST':
         Item.objects.create(text=request.POST['item_text'])
-        return render(request, 'blog/InteractiveCV/cv.html', {'items': items})
-    else:
+        return redirect('/cv')
+
     items = Item.objects.all()
-    return render(request, 'blog/InteractiveCV/cv.html', {'items': items})
+    return render(request, 'home.html', {'items': items})'', {'items': items})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
