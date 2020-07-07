@@ -13,16 +13,22 @@
 
     <h2>skills </h2>
     
-    <form method="POST">
-        <input name="item_text" id="id_new_item" placeholder="Enter a new skill" />
+    <form method="POST" action="/cv">
+        {{form}}
+        
+        <input type="submit" value="Enter"  name="item_text" id="id_new_item" placeholder="Enter a new skill"/>
         {% csrf_token %}
     </form>
    
-    <table id="id_list_table">
-        {% for item in items %}
-            <tr><td>1: {{ item.text }}</td></tr>
+        
+        {% for items in item %}
+            <div>
+                <p>{{items}}</p>
+               
+            </div>
         {% endfor %}
-    </table>
+        
+    
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 from django import forms
+from django.forms import ModelForm
 
-from .models import Comment, Post
+from .models import Comment, Post ,Item
 
 
 class PostForm(forms.ModelForm):
@@ -14,3 +15,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('author', 'text',)        
+class CVForm(forms.ModelForm):
+        class Meta:
+            model=Item
+            fields='__all__'
+
+

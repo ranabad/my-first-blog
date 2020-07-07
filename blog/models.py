@@ -39,4 +39,8 @@ class Comment(models.Model):
 
 class Item(models.Model):
     text = models.TextField(default='')
-    created_date = models.DateTimeField(default='')
+    created_date = models.DateTimeField(default=timezone.now)
+    def add(self):
+        self.save()
+    def __str__(self):
+        return self.text
