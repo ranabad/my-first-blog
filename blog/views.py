@@ -17,7 +17,7 @@ def InteractiveCV(request):
             return redirect('/cv',pk=form.pk)
     
     context = {'items':item,'form':form}
-    return render(request, 'blog/InteractiveCV/cv.html', context, pk=post.pk)
+    return render(request, 'InteractiveCV', context, pk=post.pk)
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
