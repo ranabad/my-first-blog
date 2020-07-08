@@ -7,17 +7,18 @@ from django.utils import timezone
 from .forms import CommentForm, PostForm , CVForm
 from .models import Comment, Post, Item
 
-def InteractiveCV(request):
-    item=Item.objects.all()
-    form=CVForm()
-    if request.method == 'POST':
-        form = CVForm(request.POST,pk=pk)
+def InteractiveCV(request,pk):
+    items=Item.objects.all
+    form = get_object_or_404(CVForm, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=form)
         if form.is_valid():
+            form = form.save(commit=False)
             form.save()
-            return redirect('/cv',pk=form.pk)
-    
-    context = {'items':item,'form':form}
-    return render(request, 'InteractiveCV', context, pk=post.pk)
+            return redirect('blog/InteractiveCV/cv.html', pk=post.pk)
+    else:
+        form = CVForm(instance=form)
+    return render(request, 'blog/InteractiveCV/cv.html', {'items': items}{'form': form})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
