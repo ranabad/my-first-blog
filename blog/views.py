@@ -18,7 +18,7 @@ def InteractiveCV(request,pk):
             return redirect('blog/InteractiveCV/cv.html', pk=post.pk)
     else:
         form = CVForm(instance=form)
-    return render(request, 'blog/InteractiveCV/cv.html', {'items': items}{'form': form})
+    return render(request, 'blog/InteractiveCV/cv.html', {'items': items},{'form': form})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
