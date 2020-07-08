@@ -38,7 +38,7 @@ class Comment(models.Model):
         return self.text
 
 class Item(models.Model):
-    text = models.TextField(default='')
+    text = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
     def add(self):
         self.save()
