@@ -11,7 +11,7 @@ def InteractiveCV(request):
     item=Item.objects.all()
     form=CVForm()
     if request.method == 'POST':
-        form = CVForm(request.POST)
+        form = CVForm(request.POST,pk=pk)
         if form.is_valid():
             form.save()
             return redirect('/cv',pk=form.pk)
