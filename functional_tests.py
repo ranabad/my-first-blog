@@ -1,4 +1,4 @@
-import time
+""" import time
 import unittest
 
 from selenium import webdriver
@@ -45,3 +45,4 @@ class NewVisitorTest(unittest.TestCase):
         self.fail('Finish the test!')
 
         # The page updates again, and now shows both items on her list
+ """

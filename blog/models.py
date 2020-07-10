@@ -37,8 +37,11 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-class Item(models.Model):
+class Education(models.Model):
     text = models.CharField(max_length=200)
-    created_date = models.DateTimeField(default=timezone.now)
+    date = models.DateTimeField(default=timezone.now)
     def __str__(self):
         return self.text
+    def publish(self):
+        self.date = timezone.now()
+        self.save()    
