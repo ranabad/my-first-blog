@@ -88,9 +88,10 @@
       {% if user.is_authenticated %}
       <form method="POST" class="post-form">
           {% csrf_token %}
-          {{form}}
+
+          <input placeholder="Enter Update" id="id_new_item" type={{form.text}}/>
           
-          
+          {{form.date}}
           <button type="submit" class="save btn btn-default">Send</button>
       </form>
       

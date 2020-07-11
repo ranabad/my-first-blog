@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+import datetime
 
 
 
@@ -39,7 +40,7 @@ class Comment(models.Model):
 
 class Education(models.Model):
     text = models.CharField(max_length=200)
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateField(null=True)
     def __str__(self):
         return self.text
     def publish(self):
