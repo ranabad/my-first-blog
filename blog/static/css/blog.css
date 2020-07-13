@@ -12,12 +12,7 @@
         font-size: 52pt;
         text-decoration:none;
         font-family: 'Cambria',serif;
-<<<<<<< HEAD
         text-align: center;
-
-=======
-        
->>>>>>> TDD
 
 
 }
@@ -26,7 +21,6 @@
 
          margin-left: 40px;
          
-
 
 }
 h1, h2, h3, h4 
@@ -70,6 +64,7 @@ body {
         width: 100%;
         color: black;
 
+
        
 }
 
@@ -103,48 +98,23 @@ body {
 }
 
 /* unvisited link */
-a:link {
+.a:link {
         color: white;
       }
       
       /* visited link */
-      a:visited {
+.a:visited {
         color: white
       }
       
       /* mouse over link */
-      a:hover {
-        color: #6b6e70;
+.a:hover {
+        color: white;
       }
       
       /* selected link */
-      a:active {
+.a:active {
         color: white;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 6px 12px;
-        margin-bottom: 0;
-        font-size: 14px;
-        font-weight: normal;
-        line-height: 1.42857143;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        -ms-touch-action: manipulation;
-            touch-action: manipulation;
-        cursor: pointer;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-        background-image: none;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        color: white;
-        background-color:green;
-        border-color: green;
       }
 
 
@@ -157,13 +127,12 @@ border-color: green;
 }
 .btn-default:hover,
 .btn-default:focus,
-.btn-default.focus,
 .btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  color: green;
-  background-color: #e6e6e6;
-  border-color: #e6e6e6;
+.btn-default:link,
+.open >{
+  color:green;
+  background-color: green;
+  border-color: green;
 }
 .save.btn-default
 {
@@ -174,13 +143,12 @@ border-color: green;
 }
 .save.btn-default:hover,
 .save.btn-default:focus,
-.save.btn-default.focus,
 .save.btn-default:active,
-.save.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  color: green;
-  background-color: #e6e6e6;
-  border-color: #e6e6e6;
+.save.btn-default:link,
+.open >  {
+  color: white;
+  background-color: green;
+  border-color: green;
 }
 
  

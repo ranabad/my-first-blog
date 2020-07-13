@@ -7,19 +7,13 @@
         {{ post.published_date }}
     </div>
 {% else %}
-<style>.btn-default{
-    color: white;
-   background-color:black;
-   border-color: green;
-           
-   }</style>
-    <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+    <a style="background-color:green; color: white; border-color: green;"class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 {% endif %}
         {% if user.is_authenticated %}
-     <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-     <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+     <a style="background-color:green; color: white; border-color: green;" class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+     <a style="background-color:green; color: white; border-color: green;" class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
-        <h2 style="color:white;"> {{ post.title }}</h2>
+        <h2 style="color:white;"></h2> {{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
     <hr>
@@ -30,8 +24,8 @@
         <div class="date">
             {{ comment.created_date }}
             {% if not comment.approved_comment %}
-                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <a style="background-color:green; color: white; border-color: green;"class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a style="background-color:green; color: white; border-color: green;"class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
             {% endif %}
         </div>
         <strong>{{ comment.author }}</strong>

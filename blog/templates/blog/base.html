@@ -29,13 +29,9 @@
             <a href="{% url 'cv' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> CV <small></small></p></a>
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-<<<<<<< HEAD
                 <p class="top-menu">Hello {{ user.username }} <small>(<a style="color:green;" href="{% url 'logout' %}">Log out</a>)</small></p>
-=======
-                <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
-                
-                
->>>>>>> TDD
+
+ 
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
                 <a href="{% url 'cv' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> CV <small></small></p></a>
