@@ -1,0 +1,123 @@
+<style>
+  .vl {
+    border-right: 6px solid green;
+    height: 500px;
+    margin-right:-20%;
+  }
+  .content-container{
+    margin-left: 40%;
+    margin-top: 4%;
+    
+  	
+  }
+  .w3-third{
+    margin-top: 4%;
+    margin-left:-5%;
+    margin-right:5%;
+  }
+  
+  </style>
+  
+  
+  
+  
+  
+  {% extends "blog/base.html" %}
+  
+  {% block content %}
+  <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <body>
+  
+  
+      <!-- Left Column -->
+      
+       
+      <div class="w3-third ">
+      
+        
+          <div class="w3-display-container vl">
+           
+            
+          
+          <div class="w3-container">
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-green"></i>Student</p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-green"></i>Birmingham, UK</p>
+            <p style=margin-right:-60%><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-green"></i>Rana.a.albadrani@gmail.com</p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-green"></i>+447397236086</p>
+            <hr>
+  
+      
+           
+  
+            <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-green"></i>Languages</b></p>
+            <p>Arabic</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-green" style="height:24px;width:100%"></div>
+              </div>
+            <p>English</p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-green" style="height:24px;width:90%"></div>
+            </div>
+            <br>
+          </div>
+        </div><br>
+        
+  
+      <!-- End Left Column -->
+      </div>
+   
+      <!-- Right Column -->
+      <div class="content-container">
+    
+        <div>
+          <h2>Profile</h2>
+  
+          <p> I am an all-round, goal-oriented performer who always seeks to bring out perfection in everything.
+              I have a proactive attitude, a strong work ethic, the flexibility to adapt to any situation and I work well with others.
+              I am sure to make a real contribution to the day to day operations of any organization. I possess many transferable skills and experiece.
+          <p>
+  
+      </div>
+  
+  
+      <h3>Education</h3>
+      {% if user.is_authenticated %}
+      <form method="POST" class="post-form">
+          {% csrf_token %}
+
+          <input placeholder="Enter Update" id="id_new_item" type={{form.text}}/>
+          
+          {{form.date}}
+          <button type="submit" class="save btn btn-default">Send</button>
+      </form>
+      
+      
+      {%endif%} 
+      <div>
+      {% for items in items %}
+      
+     
+          
+          <p>Education={{items.text}} Data={{items.date}}</p>
+          
+       
+      {%endfor%} 
+      </div>    
+      
+      <!-- End Right Column -->
+      
+    
+  
+  
+  
+  
+  
+  </body>
+  </html>
+  
+  
+  {% endblock %}

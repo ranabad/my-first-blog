@@ -4,9 +4,20 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from .forms import CommentForm, PostForm
-from .models import Comment, Post
+from .forms import CommentForm, PostForm , EducationForm
+from .models import Comment, Post, Education
 
+def InteractiveCV(request):
+    items=Education.objects.all()
+    form = EducationForm()
+    if request.method == "POST":
+        form = EducationForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv')
+    form = EducationForm() 
+    context= {'items': items,'form': form}
+    return render(request, 'blog/cv.html', context)
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
