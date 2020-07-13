@@ -1,3 +1,4 @@
+import time
 import unittest
 
 from django.test import TestCase
@@ -16,13 +17,9 @@ class NewVisitorTest(unittest.TestCase):
         #I wont test whether Post Method works because USER MUST BE ADMIN (ME)
         self.browser.get('http://127.0.0.1:8000/cv')
         self.assertIn('Personal Blog', self.browser.title)  
-        header_text = self.browser.find_element_by_tag_name('h2').text  
-        self.assertIn("Profile", header_text)
-        header_text2 = self.browser.find_element_by_tag_name('h3').text 
-        self.assertIn("Education", header_text2)
-        paragraph_search=self.browser.find_elements_by_tag_name('p')
-        class_contentcontainer=self.browser.find_elements_by_class_name('content-container')
-        
+        html = self.browser.page_source
+        time.sleep(2)
+        print(html)
 
         
 
