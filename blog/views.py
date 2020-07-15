@@ -7,7 +7,7 @@ from django.utils import timezone
 from .forms import CommentForm, PostForm , EducationForm
 from .models import Comment, Post, Education
 
-def InteractiveCV(request):
+def EducationinCV(request):
     items=Education.objects.all()
     form = EducationForm()
     if request.method == "POST":
@@ -18,11 +18,29 @@ def InteractiveCV(request):
     form = EducationForm() 
     context= {'items': items,'form': form}
     return render(request, 'blog/cv.html', context)
-
+@login_required    
+def EducationinCVUpdatde(request, pk):
+    items = Education.objects.get(pk=pk)
+    
+    form = EducationForm(instance=items)
+    if request.method == "POST":
+        form = EducationForm(request.POST, instance=items)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv')    
+    context={'form':form}
+    return render(request, 'blog/cvEducationUpdate.html', context)  
+@login_required    
+def EducationinCVDlt(request, pk):
+    items = Education.objects.get(pk=pk) 
+    if request.method == "POST":
+        items.delete()
+        return redirect('/cv')     
+    context={'items':items}
+    return render(request, 'blog/cvEducationDlt.html', context)        
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
-
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
@@ -78,7 +96,6 @@ def add_comment_to_post(request, pk):
     else:
         form = CommentForm()
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
-
 @login_required
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)

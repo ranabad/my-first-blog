@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<style> form
+    {
+    color:black;
+    
+    }
+</style>
+
+    <h2>Education</h2>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form}}
+        <button style="background-color:green; color: white; border-color: green;" type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

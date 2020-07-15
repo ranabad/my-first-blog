@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+    <h2>Education</h2>
+    <p>Are you sure you want to delete"{{items}}"</p>
+    
+    <a class="btn btn-default" href="{% url 'cv' %}"><span class="glyphicon glyphicon-arrow-left"></span></a>
+
+    <form  method="POST" action="">
+        {% csrf_token %}
+        <button style="background-color:green; color: white; border-color: green;" type="submit" class="save btn btn-default">Delete</button>
+    </form>
+    
+
+{% endblock %}

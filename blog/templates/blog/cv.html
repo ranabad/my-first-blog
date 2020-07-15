@@ -86,27 +86,29 @@
   
       <h3>Education</h3>
       {% if user.is_authenticated %}
+     
       <form method="POST" class="post-form">
           {% csrf_token %}
-
-          <input placeholder="Enter Update" id="id_new_item" type={{form.text}}/>
-          
-          {{form.date}}
-          <button style="background-color:green; color: white; border-color: green; "type="submit" class="save btn btn-default">Send</button>
+          {{ form.as_p }}
+        
+          <button type="submit" class="save btn btn-default">Send</button>
+         
       </form>
-      
-      
+    
       {%endif%} 
+    
       <div>
       {% for items in items %}
       
-     
-          
           <p>Education={{items.text}} Data={{items.date}}</p>
-          
+          {% if user.is_authenticated %}
+          <a class="btn btn-default" href="{% url 'cv_Education_edit' pk=items.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+          <a class="btn btn-default" href="{% url 'cv_Education_dlt' pk=items.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+          {% endif %}
        
       {%endfor%} 
-      </div>    
+      </div>  
+    
       
       <!-- End Right Column -->
       
