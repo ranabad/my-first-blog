@@ -4,22 +4,39 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from .forms import CommentForm, PostForm , EducationForm
-from .models import Comment, Post, Education
+from .forms import CommentForm, PostForm , EducationForm,SkillsForm
+from .models import Comment, Post, Education, Skills
 
-def EducationinCV(request):
+def CV(request):
     items=Education.objects.all()
+    skills=Skills.objects.all()
+    form1=EducationForm()
+    form2=SkillsForm()
+    
+    context= {'items': items,'form1': form1,'form2': form2,'skills': skills}
+    return render(request, 'blog/cv.html', context)
+def EducationCV(request):
+    items = Education.objects.all()
     form = EducationForm()
     if request.method == "POST":
         form = EducationForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('/cv')
-    form = EducationForm() 
-    context= {'items': items,'form': form}
-    return render(request, 'blog/cv.html', context)
+        return redirect('/cv/Education')    
+    context={'items': items,'form':form}
+    return render(request, 'blog/cvEducation.html', context)
+def SkillsCV(request):
+    skills = Skills.objects.all()
+    form = SkillsForm()
+    if request.method == "POST":
+        form = SkillsForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv/Skills')    
+    context={'skills': skills,'form':form}
+    return render(request, 'blog/cvSkills.html', context)              
 @login_required    
-def EducationinCVUpdatde(request, pk):
+def EducationCVUpdatde(request, pk):
     items = Education.objects.get(pk=pk)
     
     form = EducationForm(instance=items)
@@ -27,17 +44,36 @@ def EducationinCVUpdatde(request, pk):
         form = EducationForm(request.POST, instance=items)
         if form.is_valid():
             form.save()
-        return redirect('/cv')    
+        return redirect('/cv/Education')    
     context={'form':form}
     return render(request, 'blog/cvEducationUpdate.html', context)  
 @login_required    
-def EducationinCVDlt(request, pk):
+def EducationCVDlt(request, pk):
     items = Education.objects.get(pk=pk) 
     if request.method == "POST":
         items.delete()
-        return redirect('/cv')     
+        return redirect('/cv/Education')     
     context={'items':items}
-    return render(request, 'blog/cvEducationDlt.html', context)        
+    return render(request, 'blog/cvEducationDlt.html', context)
+@login_required    
+def SkillsCVUpdatde(request, pk):
+    skills = Skills.objects.get(pk=pk)
+    form = SkillsForm(instance=skills)
+    if request.method == "POST":
+        form = SkillsForm(request.POST, instance=skills)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv/Skills')    
+    context={'form':form}
+    return render(request, 'blog/cvSkillsUpdate.html', context)  
+@login_required    
+def SkillsCVDlt(request, pk):
+    skills = Skills.objects.get(pk=pk) 
+    if request.method == "POST":
+        skills.delete()
+        return redirect('/cv/Skills')     
+    context={'skills':skills}
+    return render(request, 'blog/cvSkillsDlt.html', context)            
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})

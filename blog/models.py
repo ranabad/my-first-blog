@@ -46,3 +46,7 @@ class Education(models.Model):
     def publish(self):
         self.date = timezone.now()
         self.save()    
+class Skills(models.Model):
+    text = models.CharField(max_length=200)   
+    def __str__(self):
+        return self.text     

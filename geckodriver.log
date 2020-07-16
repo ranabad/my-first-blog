@@ -310,3 +310,7 @@ console.warn: services.settings: main/whats-new-panel sync interrupted by shutdo
 1594845255848	Marionette	INFO	Listening on port 63764
 1594845255943	Marionette	WARN	TLS certificate errors will be ignored for this session
 1594845259424	Marionette	INFO	Stopped listening on port 63764
+1594863538036	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/62/v30rcq5d79v77qxrzg4xcrd40000gn/T/rust_mozprofilesQ6nmX"
+1594863540873	Marionette	INFO	Listening on port 50885
+1594863540965	Marionette	WARN	TLS certificate errors will be ignored for this session
+1594863544538	Marionette	INFO	Stopped listening on port 50885

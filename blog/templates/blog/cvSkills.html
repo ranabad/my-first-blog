@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<h3>Skills</h3>
+      
+      <a href="{% url 'cv' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> CV <small></small></p></a>
+      
+      <form method="POST" class=post-form>
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        
+        <button type="submit" class="save btn btn-default">Send</button>
+         
+      </form>
+      
+      <div>
+      {% for skills in skills %}
+      
+          <p>Skills={{skills.text}}</p>
+          
+          <a class="btn btn-default" href="{% url 'cv_Skills_edit' pk=skills.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+          <a class="btn btn-default" href="{% url 'cv_Skills_dlt' pk=skills.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+  
+      {%endfor%} 
+    </div>
+      
+      {% endif %} 
+      {% endblock %}     

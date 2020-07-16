@@ -78,7 +78,10 @@
    
       <!-- Right Column -->
       <div class="content-container">
-    
+        {% if user.is_authenticated %}
+        <a href="{% url 'cvEducation' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> Education <small></small></p></a>
+        <a href="{% url 'cvSkills' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> Skills <small></small></p></a>
+        {% endif %}
         <div>
           <h2>Profile</h2>
   
@@ -90,30 +93,31 @@
       </div>
   
   
-      <h3>Education</h3>
-      {% if user.is_authenticated %}
-     
-      <form method="POST" class="post-form">
-          {% csrf_token %}
-          {{ form.as_p }}
-        
-          <button type="submit" class="save btn btn-default">Send</button>
-         
-      </form>
-    
-      {%endif%} 
-    
-      <div>
-      {% for items in items %}
       
-          <p>Education={{items.text}} Data={{items.date}}</p>
-          {% if user.is_authenticated %}
-          <a class="btn btn-default" href="{% url 'cv_Education_edit' pk=items.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
-          <a class="btn btn-default" href="{% url 'cv_Education_dlt' pk=items.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-          {% endif %}
-       
-      {%endfor%} 
-      </div>  
+    <div>
+      <h3>Education</h3>
+      <div>
+        {% for items in items %}
+        
+            <p>Education={{items.text}} Data={{items.date}}</p>
+      
+         
+        {%endfor%} 
+       </div> 
+       <div>
+        <h4>Skills</h4>
+        <div>
+          {% for skills in skills %}
+          
+              <p>Skill={{skills.text}} </p>
+        
+           
+          {%endfor%} 
+         </div>  
+
+      
+
+
     
       
       <!-- End Right Column -->

@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<h3>Education</h3>
+      <a href="{% url 'cv' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> CV <small></small></p></a>
+      <form method="POST" class=post-form>
+          {% csrf_token %}
+          {{ form.as_p }}
+        
+        <button type="submit"  class="save btn btn-default">Send</button>   
+      </form>
+    
+     
+    
+      <div>
+      {% for items in items %}
+      
+          <p>Education={{items.text}} Data={{items.date}}</p>
+          
+          <a class="btn btn-default" href="{% url 'cv_Education_edit' pk=items.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
+          <a class="btn btn-default" href="{% url 'cv_Education_dlt' pk=items.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+          
+       
+      {%endfor%} 
+     </div> 
+     {% endif %}   
+
+     {% endblock %}   

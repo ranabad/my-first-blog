@@ -4,15 +4,15 @@
 {% if user.is_authenticated %}
 
 
-    <h2>Education</h2>
-    <p>Are you sure you want to delete"{{items}}"</p>
+    <h2>Skills</h2>
+    <p>Are you sure you want to delete"{{skills}}"</p>
     
     <a class="btn btn-default" href="{% url 'cv' %}"><span class="glyphicon glyphicon-arrow-left"></span></a>
 
-    <form  method="POST" action="">
+    <form  method="POST" class=post-form>
         {% csrf_token %}
         <button style="background-color:green; color: white; border-color: green;" type="submit" class="save btn btn-default">Delete</button>
     </form>
     
-{% endif %}
+{% endif %} 
 {% endblock %}
