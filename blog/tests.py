@@ -16,7 +16,7 @@ class CVEducationiewsTest(TestCase):
          self.assertTemplateUsed(response, 'blog/cvEducation.html')
 
      def test_can_save_a_POST_request_in_Education(self):
-         self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':timezone.now})
+         self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':'Present','grade':'Not applicable'})
          new_item = Education.objects.first()
          self.assertEqual(Education.objects.count(),0)
      def test_redirects_after_POST_in_Education(self):
