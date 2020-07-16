@@ -7,7 +7,7 @@
     <h2>Skills</h2>
     <p>Are you sure you want to delete"{{skills}}"</p>
     
-    <a class="btn btn-default" href="{% url 'cv' %}"><span class="glyphicon glyphicon-arrow-left"></span></a>
+    <a class="btn btn-default" href="{% url 'cv/skills' %}"><span class="glyphicon glyphicon-arrow-left"></span></a>
 
     <form  method="POST" class=post-form>
         {% csrf_token %}
