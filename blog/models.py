@@ -40,12 +40,12 @@ class Comment(models.Model):
 
 class Education(models.Model):
     text = models.CharField(max_length=200)
-    date = models.DateField(null=True)
+    date = models.CharField(max_length=200 ,default='Present')
+    grade =models.CharField(max_length=200,default='Not applicable')
     def __str__(self):
-        return self.text
-    def publish(self):
-        self.date = timezone.now()
-        self.save()    
+        template = '{text} {date} {grade}'
+        return template.format(self)
+    
 class Skills(models.Model):
     text = models.CharField(max_length=200)   
     def __str__(self):

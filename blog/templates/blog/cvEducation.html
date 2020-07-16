@@ -15,7 +15,7 @@
       <div>
       {% for items in items %}
       
-          <p>Education={{items.text}} Data={{items.date}}</p>
+          <p>Education={{items.text}} Data={{items.date}} Grade={{items.grade}}</p>
           
           <a class="btn btn-default" href="{% url 'cv_Education_edit' pk=items.pk %}"><span class="glyphicon glyphicon-edit"></span></a>
           <a class="btn btn-default" href="{% url 'cv_Education_dlt' pk=items.pk %}"><span class="glyphicon glyphicon-remove"></span></a>

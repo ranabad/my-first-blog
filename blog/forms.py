@@ -18,7 +18,7 @@ class CommentForm(forms.ModelForm):
 class EducationForm(forms.ModelForm):
         class Meta:
             model=Education
-            fields=( 'text','date',)
+            fields=( 'text','date','grade')
 class SkillsForm(forms.ModelForm):
         class Meta:
             model=Skills
