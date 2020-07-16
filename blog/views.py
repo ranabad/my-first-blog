@@ -8,7 +8,7 @@ from .forms import CommentForm, PostForm , EducationForm,SkillsForm
 from .models import Comment, Post, Education, Skills
 
 def CV(request):
-    items=Education.objects.all()
+    items=Education.objects.all().order_by('-text')
     skills=Skills.objects.all()
     form1=EducationForm()
     form2=SkillsForm()
