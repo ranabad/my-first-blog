@@ -83,7 +83,7 @@ DATABASES = {
     
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangodata',
+        'NAME': 'myblogdb',
         'USER': 'ranabad',
         'PASSWORD': 'Myname.1997',
         'HOST': 'ranabad-1722.postgres.pythonanywhere-services.com',
