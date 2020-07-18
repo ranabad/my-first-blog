@@ -86,8 +86,8 @@ DATABASES = {
         'NAME': 'djangodata',
         'USER': 'ranabad',
         'PASSWORD': '',
-        'HOST': '.pythonanywhere.com',
-        'PORT': '',
+        'HOST': 'ranabad-1722.postgres.pythonanywhere-services.com','localhost',
+        'PORT': '11722',
     
 }
 }
