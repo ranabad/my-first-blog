@@ -87,7 +87,7 @@ DATABASES = {
         'USER': 'ranabad',
         'PASSWORD': '',
         'HOST': '.pythonanywhere.com',
-        'PORT': '',
+        'PORT': '5432',
     
 }
 }
