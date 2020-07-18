@@ -11,9 +11,21 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import datetime
+import json
 import os
 
+from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
+
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    secrets = json.load(secrets_file)
+
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +35,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4i-j*ux@*b*j^flsj_omj9$&o8_n*k-j4nh6u6_i1si_#xnneu'
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'myblogdb',
         'USER': 'ranabad',
-        'PASSWORD': 'Myname.1997',
+        'PASSWORD': get_secret('DB_PASSWORD'),
         'HOST': 'ranabad-1722.postgres.pythonanywhere-services.com',
         'PORT': '11722',
     
@@ -132,5 +144,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/'
-
-
