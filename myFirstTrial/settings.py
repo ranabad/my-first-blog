@@ -17,11 +17,8 @@ import environ
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-# reading .env file
+env = environ.Env()
+
 environ.Env.read_env()
 
 
