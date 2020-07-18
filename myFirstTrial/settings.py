@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'myFirstTrial.wsgi.application'
 
 DATABASES = {
     
-    'default': env.get_value(db)
+    'default': env.get_value('DATABASE_URL')
 }
 
 
