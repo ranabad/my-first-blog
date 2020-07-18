@@ -7,25 +7,25 @@
         {{ post.published_date }}
     </div>
 {% else %}
-    <a style="background-color:green; color: white; border-color: green;"class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+    <a style="color:#86C232;" class="myButton" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 {% endif %}
         {% if user.is_authenticated %}
-     <a style="background-color:green; color: white; border-color: green;" class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-     <a style="background-color:green; color: white; border-color: green;" class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+     <a  class="myButton" href="{% url 'post_edit' pk=post.pk %}"><span style="color:#86C232;" class="glyphicon glyphicon-pencil"></span></a>
+     <a  class="myButton" href="{% url 'post_remove' pk=post.pk %}"><span style="color:#86C232;"class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
-        <h2 style="color:white;"></h2> {{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <h2 style="color:white; font-size: 28pt; "> {{ post.title }}</h2>
+        <p style="color:white; font-size: 13pt; ">{{ post.text|linebreaksbr }}</p>
     </div>
     <hr>
-    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    <a style="color:#86C232;" class="myButton" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
     {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment">
         <div class="date">
             {{ comment.created_date }}
             {% if not comment.approved_comment %}
-                <a style="background-color:green; color: white; border-color: green;"class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                <a style="background-color:green; color: white; border-color: green;"class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <a class="myButton"href="{% url 'comment_remove' pk=comment.pk %}"><span style="color:#86C232;" class="glyphicon glyphicon-remove"></span></a>
+                <a class="myButton" href="{% url 'comment_approve' pk=comment.pk %}"><span style="color:#86C232;" class="glyphicon glyphicon-ok"></span></a>
             {% endif %}
         </div>
         <strong>{{ comment.author }}</strong>
@@ -33,7 +33,7 @@
     </div>
     {% endif %}
 {% empty %}
-    <p style="color:white;"></pstyle> No comments here yet :(</p>
+    <p style="color:white; font-size: 11pt; "></pstyle> No comments here yet :(</p>
 {% endfor %}
 
 {% endblock %}

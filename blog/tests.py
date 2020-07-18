@@ -3,11 +3,14 @@ from django.test import TestCase
 from django.urls import resolve, reverse
 from django.utils import timezone
 
-from blog.forms import EducationForm,SkillsForm
-from blog.models import Education,Skills
-from blog.views import EducationCV,SkillsCV
+from blog.forms import EducationForm,SkillsForm,WorkshopsForm,ExperienceForm
+from blog.models import Education,Skills,Workshops,Experience
+from blog.views import EducationCV,SkillsCV,WorkshopsCV,ExperienceCV,CV
 from django.http import HttpResponse
-
+class CVTest(TestCase):
+     def test_uses_CV_template(self):
+         response = self.client.get('/cv')
+         self.assertTemplateUsed(response, 'blog/cv.html')
 
 class CVEducationiewsTest(TestCase):
 
@@ -71,16 +74,8 @@ class EducationFormTest(TestCase):
             form = EducationForm()
             self.assertIn('for="id_text"', form.as_p())
             self.assertIn('for="id_date"', form.as_p()) 
-from django.http import HttpRequest
-from django.test import TestCase
-from django.urls import resolve, reverse
-from django.utils import timezone
 
-from blog.forms import SkillsForm
-from blog.models import Skills
-from blog.views import SkillsCV
-from django.http import HttpResponse
-
+ 
 
 class CVSkillsiewsTest(TestCase):
 
@@ -89,7 +84,7 @@ class CVSkillsiewsTest(TestCase):
          self.assertTemplateUsed(response, 'blog/cvSkills.html')
 
      def test_can_save_a_POST_request_in_Skills(self):
-         self.client.post('/cv/Skills', data={'item_text': 'A new list item', 'date':timezone.now})
+         self.client.post('/cv/Skills', data={'item_text': 'A new list item', })
          new_item = Skills.objects.first()
          self.assertEqual(Skills.objects.count(),0)
      def test_redirects_after_POST_in_Skills(self):
@@ -110,7 +105,7 @@ class CVSkillsiewsTest(TestCase):
          item=Skills.objects.create(text='itemey 1')
          response = self.client.get('/cv')
          self.assertIn('itemey 1', response.content.decode())
-         self.client.post('/cv/1/edit/', data={'item_text': 'Hello', 'date':timezone.now})
+         self.client.post('/cv/1/edit/', data={'item_text': 'Hello', })
          new_item = Skills.objects.first()
          self.assertEqual(Skills.objects.count(),1)
      def test_dlts_selected_item_inSkills(self): 
@@ -143,5 +138,134 @@ class SkillsFormTest(TestCase):
         def test_form_item_input_has_placeholder_and_css_classes(self):
             form = SkillsForm()
             self.assertIn('for="id_text"', form.as_p())
+class CVWorkshopiewsTest(TestCase):
+
+     def test_uses_CV_template(self):
+         response = self.client.get('/cv/Workshop')
+         self.assertTemplateUsed(response, 'blog/cvWorkshop.html')
+
+     def test_can_save_a_POST_request_in_Workshop(self):
+         self.client.post('/cv/Workshop', data={'item_text': 'A new list item', 'date':'Present',})
+         new_item = Workshops.objects.first()
+         self.assertEqual(Workshops.objects.count(),0)
+     def test_redirects_after_POST_in_Workshop(self):
+         response = self.client.post('/cv/Workshop', data={'item_text': 'A new list item'})
+         self.assertEqual(response.status_code, 302)
+         self.assertEqual(response['location'], '/cv/Workshop')
+     def test_only_saves_items_when_necessary(self):
+         self.client.get('/cv/Workshop')
+         self.assertEqual(Workshops.objects.count(), 0)
+     def test_displays_all_list_items_in_Workshop(self):
+         Workshops.objects.create(text='itemey 1')
+         Workshops.objects.create(text='itemey 2')
+         response = self.client.get('/cv')
+
+         self.assertIn('itemey 1', response.content.decode())
+         self.assertIn('itemey 2', response.content.decode())
+     def test_Updates_selected_item_in_Workshop(self): 
+         item=Workshops.objects.create(text='itemey 1')
+         response = self.client.get('/cv')
+         self.assertIn('itemey 1', response.content.decode())
+         self.client.post('/cv/1/edit/', data={'item_text': 'Hello', 'date':timezone.now})
+         new_item = Workshops.objects.first()
+         self.assertEqual(Workshops.objects.count(),1)
+     def test_dlts_selected_item_inWorkshop(self): 
+         Workshops.objects.create(text='itemey 1')
+         Workshops.objects.create(text='itemey 2')
+         response = self.client.get('/cv')
+         self.assertIn('itemey 1', response.content.decode())
+         self.assertIn('itemey 2', response.content.decode())
+         Workshops.objects.first().delete()
+         self.assertEqual(Workshops.objects.count(), 1)
+
+class CVExperienceiewsTest(TestCase):
+
+     def test_uses_CV_template(self):
+         response = self.client.get('/cv/Experience')
+         self.assertTemplateUsed(response, 'blog/cvExperience.html')
+
+     def test_can_save_a_POST_request_in_Experience(self):
+         self.client.post('/cv/Experience', data={'item_text': 'A new list item', 'date':'Present','grade':'Not applicable'})
+         new_item = Experience.objects.first()
+         self.assertEqual(Experience.objects.count(),0)
+     def test_redirects_after_POST_in_Experience(self):
+         response = self.client.post('/cv/Experience', data={'item_text': 'A new list item'})
+         self.assertEqual(response.status_code, 302)
+         self.assertEqual(response['location'], '/cv/Experience')
+     def test_only_saves_items_when_necessary(self):
+         self.client.get('/cv/Experience')
+         self.assertEqual(Experience.objects.count(), 0)
+     def test_displays_all_list_items_in_Experience(self):
+         Experience.objects.create(text='itemey 1')
+         Experience.objects.create(text='itemey 2')
+         response = self.client.get('/cv')
+
+         self.assertIn('itemey 1', response.content.decode())
+         self.assertIn('itemey 2', response.content.decode())
+     def test_Updates_selected_item_in_Experience(self): 
+         item=Experience.objects.create(text='itemey 1')
+         response = self.client.get('/cv')
+         self.assertIn('itemey 1', response.content.decode())
+         self.client.post('/cv/1/edit/', data={'item_text': 'Hello', 'date':timezone.now})
+         new_item = Experience.objects.first()
+         self.assertEqual(Experience.objects.count(),1)
+     def test_dlts_selected_item_inExperience(self): 
+         Experience.objects.create(text='itemey 1')
+         Experience.objects.create(text='itemey 2')
+         response = self.client.get('/cv')
+         self.assertIn('itemey 1', response.content.decode())
+         self.assertIn('itemey 2', response.content.decode())
+         Experience.objects.first().delete()
+         self.assertEqual(Experience.objects.count(), 1)
+
+class ExperienceModelTest(TestCase):
+     def test_saving_and_retrieving_items(self):
+         first_item = Experience()
+         first_item.text = 'The first (ever) list item'
+         first_item.save()
+
+         second_item = Experience()
+         second_item.text = 'Item the second'
+         second_item.save()
+
+         saved_items = Experience.objects.all()
+         self.assertEqual(saved_items.count(), 2)
+
+         first_saved_item = saved_items[0]
+         second_saved_item = saved_items[1]
+         self.assertEqual(first_saved_item.text, 'The first (ever) list item')
+         self.assertEqual(second_saved_item.text, 'Item the second') 
+class ExperienceFormTest(TestCase):     
+        def test_form_item_input_has_placeholder_and_css_classes(self):
+            form = ExperienceForm()
+            self.assertIn('for="id_text"', form.as_p())
+            self.assertIn('for="id_date"', form.as_p()) 
+
+
+
+class WorkshopModelTest(TestCase):
+     def test_saving_and_retrieving_items(self):
+         first_item = Workshops()
+         first_item.text = 'The first (ever) list item'
+         first_item.save()
+
+         second_item = Workshops()
+         second_item.text = 'Item the second'
+         second_item.save()
+
+         saved_items = Workshops.objects.all()
+         self.assertEqual(saved_items.count(), 2)
+
+         first_saved_item = saved_items[0]
+         second_saved_item = saved_items[1]
+         self.assertEqual(first_saved_item.text, 'The first (ever) list item')
+         self.assertEqual(second_saved_item.text, 'Item the second') 
+class WorkshopFormTest(TestCase):     
+        def test_form_item_input_has_placeholder_and_css_classes(self):
+            form = WorkshopsForm()
+            self.assertIn('for="id_text"', form.as_p())
+            self.assertIn('for="id_date"', form.as_p()) 
+
+
 
 

@@ -2,9 +2,9 @@
 
 {% block content %}
 
-    <h2 style="color:white;">Post</h2>
+    <h2>Post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button style="background-color:green; color: white; border-color: green;" type="submit" class="save btn btn-default">Save</button>
+        <button  type="submit" class="save myButton">Save</button>
     </form>
 {% endblock %}

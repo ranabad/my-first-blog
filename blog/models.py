@@ -43,10 +43,22 @@ class Education(models.Model):
     date = models.CharField(max_length=200 ,default='Present')
     grade =models.CharField(max_length=200,default='Not applicable')
     def __str__(self):
-        template = '{text} {date} {grade}'
-        return template.format(self)
+        temp = '{text} {date} {grade}'
+        return temp.format(self)
     
 class Skills(models.Model):
     text = models.CharField(max_length=200)   
     def __str__(self):
         return self.text     
+class Workshops(models.Model):
+    text = models.CharField(max_length=200)
+    date = models.CharField(max_length=200 ,default='Present')
+    def __str__(self):
+        template = '{text} {date}'
+        return template.format(self)
+class Experience(models.Model):
+    text = models.CharField(max_length=200)
+    date = models.CharField(max_length=200 ,default='Present')
+    def __str__(self):
+        exp = '{text} {date}'
+        return exp.format(self)                  

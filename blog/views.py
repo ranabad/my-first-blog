@@ -4,16 +4,20 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from .forms import CommentForm, PostForm , EducationForm,SkillsForm
-from .models import Comment, Post, Education, Skills
+from .forms import CommentForm, PostForm , EducationForm,SkillsForm,WorkshopsForm,ExperienceForm
+from .models import Comment, Post, Education, Skills,Workshops,Experience
 
 def CV(request):
     items=Education.objects.all().order_by('-text')
     skills=Skills.objects.all()
+    work=Workshops.objects.all()
+    exp=Experience.objects.all()
     form1=EducationForm()
     form2=SkillsForm()
+    form3=WorkshopsForm()
+    form4=ExperienceForm()
     
-    context= {'items': items,'form1': form1,'form2': form2,'skills': skills}
+    context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4}
     return render(request, 'blog/cv.html', context)
 def EducationCV(request):
     items = Education.objects.all()
@@ -25,6 +29,26 @@ def EducationCV(request):
         return redirect('/cv/Education')    
     context={'items': items,'form':form}
     return render(request, 'blog/cvEducation.html', context)
+def WorkshopsCV(request):
+    work = Workshops.objects.all()
+    form = WorkshopsForm()
+    if request.method == "POST":
+        form = WorkshopsForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv/Workshop')    
+    context={'work': work,'form':form}    
+    return render(request, 'blog/cvWorkshop.html', context)
+def ExperienceCV(request):
+    exp = Experience.objects.all()
+    form = ExperienceForm()
+    if request.method == "POST":
+        form = ExperienceForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv/Experience')    
+    context={'exp': exp,'form':form}    
+    return render(request, 'blog/cvExperience.html', context)    
 def SkillsCV(request):
     skills = Skills.objects.all()
     form = SkillsForm()
@@ -55,6 +79,47 @@ def EducationCVDlt(request, pk):
         return redirect('/cv/Education')     
     context={'items':items}
     return render(request, 'blog/cvEducationDlt.html', context)
+@login_required    
+def WorkshopsCVUpdatde(request, pk):
+    work = Workshops.objects.get(pk=pk)
+    
+    form = WorkshopsForm(instance=work)
+    if request.method == "POST":
+        form = WorkshopsForm(request.POST, instance=work)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv/Workshop')    
+    context={'form':form}
+    return render(request, 'blog/cvWorkshpsUpdate.html', context)  
+@login_required    
+def WorkshopsCVDlt(request, pk):
+    work = Workshops.objects.get(pk=pk) 
+    if request.method == "POST":
+        work.delete()
+        return redirect('/cv/Workshop')     
+    context={'work':work}
+    return render(request, 'blog/cvWorkshopDlt.html', context)
+@login_required    
+def ExperienceCVUpdatde(request, pk):
+    exp = Experience.objects.get(pk=pk)
+    
+    form = ExperienceForm(instance=exp)
+    if request.method == "POST":
+        form = ExperienceForm(request.POST, instance=exp)
+        if form.is_valid():
+            form.save()
+        return redirect('/cv/Experience')    
+    context={'form':form}
+    return render(request, 'blog/cvExperienceUpdate.html', context)  
+@login_required    
+def ExperienceCVDlt(request, pk):
+    exp = Experience.objects.get(pk=pk) 
+    if request.method == "POST":
+        exp.delete()
+        return redirect('/cv/Experience')     
+    context={'exp':exp}
+    return render(request, 'blog/cvExperienceDlt.html', context) 
+
 @login_required    
 def SkillsCVUpdatde(request, pk):
     skills = Skills.objects.get(pk=pk)

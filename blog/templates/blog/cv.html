@@ -4,9 +4,10 @@
     height: 500px;
     margin-right:-22%;
   }
-  .content-container{
+  .Rana-container{
     margin-left: 45%;
     margin-top: 4%;
+    min-width: 90%;
     
   	
   }
@@ -16,9 +17,14 @@
     margin-right:5%;
     min-width:38%
   }
+  .w-container{
+    
+    margin-top: 4%;
+    min-width: 90%;
+    
+  	
+  }
 
-
- 
   
   </style>
   
@@ -46,9 +52,9 @@
           <div class="w3-display-container vl">
            
             
-          
+           
           <div class="w3-container">
-            <p class="w3-large w3-text-theme"><b><i style="color:#86C232;" class="glyphicon glyphicon-user fa-fw w3-margin-right"></i>Info</b></p>
+            <p class="w3-large w3-text-theme"><b><i style="color:#86C232;" class="fa fa-female fa-fw w3-margin-right"></i>Info</b></p>
             <p><i style="color:#86C232;" class="fa fa-briefcase fa-fw w3-margin-right "></i>Student</p>
             <p><i style="color:#86C232;" class="fa fa-home fa-fw w3-margin-right w3-large"></i>Birmingham, UK</p>
             <p style=margin-right:-60%><i style="color:#86C232;" class="fa fa-envelope fa-fw w3-margin-right w3-large "></i>Rana.a.albadrani@gmail.com</p>
@@ -75,46 +81,101 @@
   
       <!-- End Left Column -->
       </div>
-   
+      
+      
+      
       <!-- Right Column -->
-      <div class="content-container">
-        {% if user.is_authenticated %}
-        <a href="{% url 'cvEducation' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> Education <small></small></p></a>
-        <a href="{% url 'cvSkills' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> Skills <small></small></p></a>
-        {% endif %}
-        <div>
-          <h2>Profile</h2>
-  
+      <div class="Rana-container">
+       
+         <div class="w-container">
+          <h2 style=" font-size: 20pt;">Profile</h2>
+          
           <p> I am an all-round, goal-oriented performer who always seeks to bring out perfection in everything.
               I have a proactive attitude, a strong work ethic, the flexibility to adapt to any situation and I work well with others.
               I am sure to make a real contribution to the day to day operations of any organization. I possess many transferable skills and experiece.
           <p>
-  
-      </div>
-  
-  
+          
+       
       
-    <div>
-      <h3>Education</h3>
-      <div>
+          <hr style=" border: 1px solid; color: #6b6e70;">
+        </div>
+      
+      
+        <div class="w-container">
+    {% if user.is_authenticated %}
+      <h3 style=" font-size: 20pt;"><a href="{% url 'cvEducation' %}" > Education <small></small></p></a></h3>
+      {%else%}
+      <h3 >Education</h3>
+      {% endif %}
+      
         {% for items in items %}
         
-            <p>Education={{items.text}} Data={{items.date}} Grade={{items.grade}}</p>
+            <p>{{items.text}}</p>
+            <p>{{items.date}}</p>
       
          
         {%endfor%} 
-       </div> 
-       <div>
-        <h4>Skills</h4>
-        <div>
+       
+       <hr style=" border: 1px solid; color: #6b6e70;">
+      </div> 
+      
+     
+      <div class="w-container">
+        {% if user.is_authenticated %}
+      <h4 style=" font-size: 20pt;"><a href="{% url 'cvSkills' %}" >Skills <small></small></p></a></h4>
+      {%else%}
+      <h4 >Skills</h4>
+      {% endif %}
+        
           {% for skills in skills %}
           
-              <p>Skill={{skills.text}} </p>
+              <p>{{skills.text}} </p>
         
            
           {%endfor%} 
-         </div>  
+          
+         <hr style=" border: 1px solid; color: #6b6e70;">
+        </div> 
+       
+        <div class="w-container">
+          {% if user.is_authenticated %}
+          <h5 style=" font-size: 20pt;" ><a href="{% url 'cvExperience' %}" > Experience <small></small></p></a></h5>
+          {%else%}
+          <h5 >Experience</h5>
+          {% endif %}
+          
+            {% for exp in exp %}
+            
+                <p>{{exp.text}}</p>  
+                <p>{{exp.date}}</p>
+          
+             
+            {%endfor%} 
+           
+           <hr style=" border: 1px solid; color: #6b6e70;">
+          </div> 
 
+              
+      
+          <div class="w-container">
+          {% if user.is_authenticated %}
+          <h6 style=" font-size: 20pt;" ><a href="{% url 'cvWorkshop' %}" > Workshops <small></small></p></a></h6>
+          {%else%}
+          <h6 >Workshops</h6>
+          {% endif %}
+          
+            {% for work in work%}
+
+                <p>{{work.text}}</p>
+                <p>{{work.date}}</p>
+                
+                
+          
+             
+            {%endfor%} 
+              
+          </div> 
+      </div> 
       
 
 

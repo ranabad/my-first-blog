@@ -18,22 +18,23 @@
 }
 .content 
 {
-
+        
          margin-left: 40px;
-         color: white;
+        
          
 
 }
-h1, h2, h3, h4 
+h1, h2, h3, h4,h1 a:visited,h2 a:visited,h3 a:visited,h4 a:visited,h1 a:active,h1 a:visited,h2 a:visited,h3 a:visited,h4 a:visited
 {
+        
         font-size: 28pt;
         font-family: 'Cambria',serif; 
         color: white;
 }
 .date
 { /*green */
-       color: green;
-       font-size: 9pt;
+       color: #86C232;
+       font-size: 11pt;
         
 }
     
@@ -45,18 +46,23 @@ h1, h2, h3, h4
         
 }
 
+
 body {
         
         font-size: 13pt;
         font-family: 'Cambria',serif;
         background-color: #222629;
         color: white;
+        
       }
 
 .save 
 { /*green fag3*/
         float: right;
-        color: red;
+        
+        color: #61892f;
+        background-color:#222629;
+        border-color: #222629;
         
         
 }
@@ -86,71 +92,69 @@ body {
 
 .post 
 {
-        color:green;
+        color:white;
         margin-bottom: 70px;
+}
+.post.title 
+{
+        color:white;
+        font-size: 28pt;
+        font-family: 'Cambria',serif; 
 }
 
 
-.comment 
+.comment
 {
-        font-size: 9pt;
+       font-size: 12pt;
        color: white;
        margin: 20px 0px 20px 20px;
+      
      
 }
 
 /* unvisited link */
-.a:link {
+a:link {
         color: white;
       }
       
       /* visited link */
-.a:visited {
-        color: white
+a:visited {
+        color:white
       }
       
       /* mouse over link */
-.a:hover {
-        color: white;
+a:hover {
+        color:#6B6E70;
       }
       
       /* selected link */
-.a:active {
-        color: white;
+a:active {
+        color: #222629
       }
 
 
-.btn-default{
- color: white;
-background-color:green;
-border-color: green;
 
-        
-}
-.btn-default:hover,
-.btn-default:focus,
-.btn-default:active,
-.btn-default:link,
-.open >{
-  color:green;
-  background-color: green;
-  border-color: green;
-}
-.save.btn-default
-{
-        color: white;
-      background-color:green;
-      border-color: green;
 
+   
+      .myButton {
+	background-color:#222629;
+	border-radius: 28px;
+	border:2px solid #222629;
+	display:inline-block;
+	cursor:pointer;
+	color:#86C232;
+	font-family:Times New Roman;
+	font-size:15px;
+	padding:7px 29px;
+	text-decoration:none;
 }
-.save.btn-default:hover,
-.save.btn-default:focus,
-.save.btn-default:active,
-.save.btn-default:link,
-.open >  {
-  color: white;
-  background-color: green;
-  border-color: green;
+.myButton:hover {
+	background-color:#474b4f;
 }
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+  
 
  

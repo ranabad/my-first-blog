@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 
+
 {% block content %}
     {% if form.errors %}
         <p style="color:white;">Your username and password didn't match. Please try again.</p>
@@ -18,7 +19,7 @@
         </tr>
         </table>
 
-        <input style="background-color:green; color: white; border-color: green; float:inline-start;"  type="submit" value="login" />
-        <input style="background-color:green; color: white; border-color: green; float:inline-start;" type="hidden" name="next" value="{{ next }}" />
+        <input style="background-color:#222629;border-radius: 28px;border:2px solid #222629;display:inline-block;cursor:pointer;color:#86C232;font-family:Times New Roman;font-size:15px;padding:7px 29px; float:inline-start;"  type="submit" value="login" />
+        <input style="background-color:#222629;border-radius: 28px;border:2px solid #222629;display:inline-block;cursor:pointer;color:#86C232;font-family:Times New Roman;font-size:15px;padding:7px 29px; float:inline-start;"   type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}

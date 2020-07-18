@@ -20,6 +20,11 @@
         background-size: cover;
         
         }
+        .content-container
+        {
+            color:white;
+        }
+
    </style>
         
     <body>
@@ -29,7 +34,7 @@
             <a href="{% url 'cv' %}" class="top-menu"><span class="glyphicon glyphicon-file"></span> CV <small></small></p></a>
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-                <p class="top-menu">Hello {{ user.username }} <small>(<a style="color:green;" href="{% url 'logout' %}">Log out</a>)</small></p>
+                <p class="top-menu">Hello {{ user.username }} <small>(<a style="color:#86C232;" href="{% url 'logout' %}">Log out</a>)</small></p>
 
  
             {% else %}
@@ -39,7 +44,7 @@
             {% endif %}
             <h1><a href="/">Rana's Personal Blog</a></h1>
             </div>
-        <div class="content container">
+        <div style="color:white;" class="content container">
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}

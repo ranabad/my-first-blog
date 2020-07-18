@@ -4,10 +4,10 @@
 {% if user.is_authenticated %}
 
 
-    <h2>Education</h2>
-    <p>Are you sure you want to delete"{{items.text}}"</p>
+    <h2>Experince</h2>
+    <p>Are you sure you want to delete"{{exp.text}}"</p>
     
-    <a class="myButton" href="{% url 'cvEducation' %}"><span style="color:#86C232;" class="glyphicon glyphicon-arrow-left"></span></a>
+    <a class="myButton" href="{% url 'cvExperience' %}"><span style="color:#86C232;" class="glyphicon glyphicon-arrow-left"></span></a>
 
     <form  method="POST" action="">
         {% csrf_token %}

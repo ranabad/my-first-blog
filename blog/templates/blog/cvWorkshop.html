@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<h3><a href="{% url 'cv' %}" > Workshops <small></small></p></a></h3>
+      
+      <form method="POST" class=post-form>
+          {% csrf_token %}
+          {{ form.as_p }}
+        
+        <button type="submit"  class="save myButton">Send</button>   
+      </form>
+    
+     
+    
+      <div>
+      {% for work in work %}
+      
+          <p>Workshop Name={{work.text}} Data={{work.date}} </p>
+          
+          <a class="myButton" href="{% url 'cv_Workshop_edit' pk=work.pk %}"><span style="color:#86C232;" class="glyphicon glyphicon-edit"></span></a>
+          <a class="myButton" href="{% url 'cv_Workshop_dlt' pk=work.pk %}"><span style="color:#86C232;" class="glyphicon glyphicon-remove"></span></a>
+          
+       
+      {%endfor%} 
+     </div> 
+     {% endif %}   
+
+     {% endblock %}   

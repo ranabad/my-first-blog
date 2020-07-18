@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 
+
+
 {% block content %}
     {% for post in posts %}
         <div class="post">
@@ -8,12 +10,12 @@
             </div>
 
             
-            <h1 ><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }} </a></h1>
+            <h1 style="color:white; font-size: 28pt; "><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }} </a></h1>
 
             
 
-            <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+            <p style="color:white; font-size: 13pt; ">{{ post.text|linebreaksbr }}</p>
+            <a style="color:#86C232" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
         </div>
     {% endfor %}
 {% endblock content %}

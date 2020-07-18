@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from .models import Comment, Post ,Education, Skills
+from .models import Comment, Post ,Education, Skills,Workshops,Experience
 
 
 class PostForm(forms.ModelForm):
@@ -18,11 +18,19 @@ class CommentForm(forms.ModelForm):
 class EducationForm(forms.ModelForm):
         class Meta:
             model=Education
-            fields=( 'text','date','grade')
+            fields=( 'text','date',)
 class SkillsForm(forms.ModelForm):
         class Meta:
             model=Skills
             fields=( 'text',)
+class WorkshopsForm(forms.ModelForm):
+        class Meta:
+            model=Workshops
+            fields=( 'text','date',) 
+class ExperienceForm(forms.ModelForm):
+        class Meta:
+            model=Experience
+            fields=( 'text','date',)                         
 
 
 
