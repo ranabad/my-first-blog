@@ -11,21 +11,19 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import datetime
-import json
 import os
 
+import environ
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
 
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-    secrets = json.load(secrets_file)
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
-def get_secret(setting, secrets=secrets):
-    """Get secret setting or fail with ImproperlyConfigured"""
-    try:
-        return secrets[setting]
-    except KeyError:
-        raise ImproperlyConfigured("Set the {} setting".format(setting))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,10 +33,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com',]
 
@@ -93,15 +91,7 @@ WSGI_APPLICATION = 'myFirstTrial.wsgi.application'
 
 DATABASES = {
     
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myblogdb',
-        'USER': 'ranabad',
-        'PASSWORD': get_secret('DB_PASSWORD'),
-        'HOST': 'ranabad-1722.postgres.pythonanywhere-services.com',
-        'PORT': '11722',
-    
-}
+    'default': env.db()
 }
 
 
