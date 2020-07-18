@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'djangodata',
         'USER': 'ranabad',
         'PASSWORD': '',
-        'HOST': 'localhost','.pythonanywhere.com'
+        'HOST': '.pythonanywhere.com',
         'PORT': '',
     
 }
