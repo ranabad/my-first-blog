@@ -63,9 +63,9 @@ class Experience(models.Model):
         exp = '{text} {date}'
         return exp.format(self)
 class Contact(models.Model):
-    from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    from_email =models.EmailField(required=True)
+    subject = models.CharField(required=True)
+    message = models.CharField(widget=models.Textarea, required=True)
     def __str__(self):
         con = '{from_email} {subject} {message}'
         return con.format(self)         
