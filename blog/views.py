@@ -24,7 +24,7 @@ def CV(request):
   return render(request, 'blog/cv.html', context)
 def ContactCV(request):
     form5 = ContactForm(request.POST)
-    if form.is_valid():
+    if form5.is_valid():
         subject = form.cleaned_data['subject']
         from_email = form.cleaned_data['from_email']
         message = form.cleaned_data['message']
