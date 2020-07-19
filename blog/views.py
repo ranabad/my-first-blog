@@ -35,9 +35,9 @@ def ContactCV(request):
     return render(request, 'blog/cvContactForm.html', context)        
 @login_required    
 def ContactCVMsg(request):
-    con = Education.objects.all()
+    con = Contact.objects.all()
     form=ContactForm()
-    context= {'con': con,'form1': form1}
+    context= {'con': con,'form': form}
     return render(request, 'blog/cvContactMsg.html', context)
 
 

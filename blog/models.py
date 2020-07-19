@@ -63,7 +63,7 @@ class Experience(models.Model):
         exp = '{text} {date}'
         return exp.format(self)
 class Contact(models.Model):
-    from_email =models.EmailField()
+    from_name =models.CharField(max_length=200)
     subject = models.CharField(max_length=200)
     message = models.CharField(max_length=200)
     def __str__(self):
