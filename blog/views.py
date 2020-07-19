@@ -8,17 +8,26 @@ from .forms import CommentForm, PostForm , EducationForm,SkillsForm,WorkshopsFor
 from .models import Comment, Post, Education, Skills,Workshops,Experience,Contact
 
 def CV(request):
-    items=Education.objects.all().order_by('-text')
-    skills=Skills.objects.all()
-    work=Workshops.objects.all()
-    exp=Experience.objects.all()
-    form1=EducationForm()
-    form2=SkillsForm()
-    form3=WorkshopsForm()
-    form4=ExperienceForm()
-    model = Contact
-    form5 = ContactForm
-    
+   if request.method == 'GET':
+        items=Education.objects.all().order_by('-text')
+        skills=Skills.objects.all()
+        work=Workshops.objects.all()
+        exp=Experience.objects.all()
+        form1=EducationForm()
+        form2=SkillsForm()
+        form3=WorkshopsForm()
+        form4=ExperienceForm()
+        form5 = ContactForm()
+  else:
+    form5 = ContactForm(request.POST)
+    if form.is_valid():
+             form.save
+            try:
+                send_mail(subject, message, from_email, ['rana.a.albadrani@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('/cv')
+
     context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4,'form5':form5}
     return render(request, 'blog/cv.html', context)
 def EducationCV(request):
