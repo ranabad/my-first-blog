@@ -2,7 +2,7 @@ from django import forms
 from django.forms import ModelForm
 
 from .models import (Comment, Education, Experience, Post, Skills,
-                     Workshops)
+                     Workshops,Contact)
 
 
 class PostForm(forms.ModelForm):
@@ -33,6 +33,7 @@ class ExperienceForm(forms.ModelForm):
             model=Experience
             fields=( 'text','date',)
 class ContactForm(forms.Form):
-    from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
+    class Meta:
+        model=Contact
+        fields=( 'from_email','subject','message')
+ 

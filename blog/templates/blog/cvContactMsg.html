@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<h3><a href="{% url 'cv' %}" > Messages <small></small></p></a></h3>
+
+      
+      
+    
+     
+    
+      <div>
+      {% for con in con %}
+      
+       
+      {%endfor%} 
+     </div> 
+     {% endif %}   
+
+     {% endblock %}   

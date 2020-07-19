@@ -7,7 +7,7 @@ from django.utils import timezone
 
 from .forms import (CommentForm, ContactForm, EducationForm, ExperienceForm,
                     PostForm, SkillsForm, WorkshopsForm)
-from .models import Comment, Education, Experience, Post, Skills, Workshops
+from .models import Comment, Contact,Education, Experience, Post, Skills, Workshops
 
 
 def CV(request):
@@ -23,20 +23,24 @@ def CV(request):
   context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4}
   return render(request, 'blog/cv.html', context)
 def ContactCV(request):
-    form5 = ContactForm(request.POST)
-    if form5.is_valid():
-        subject = form5.cleaned_data['subject']
-        from_email = form5.cleaned_data['from_email']
-        message = form5.cleaned_data['message']
-        try:
-            send_mail(subject, message, from_email, ['rana.a.albadrani@gmail.com'])
-        except BadHeaderError:
-            return HttpResponse('Invalid header found.')
-        return redirect('/cv')
+    
+     form5= SkillsForm()
+    if request.method == "POST":
+        form5 = SkillsForm(request.POST)
+        if form5.is_valid():
+            form5.save()
+        return redirect('/cv')  
+    
     context= {'form5': form5}
-    return render(request, 'blog/cvContactForm.html', context)    
-   
-   
+    return render(request, 'blog/cvContactForm.html', context)        
+@login_required    
+def ContactCVMsg(request):
+    con = Education.objects.all()
+    form=ContactForm()
+    context= {'con': con,'form1': form1}
+    return render(request, 'blog/cvContactMsg.html', context)
+
+
 def EducationCV(request):
     items = Education.objects.all()
     form = EducationForm()

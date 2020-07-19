@@ -27,5 +27,7 @@ urlpatterns = [
     path('cv/<int:pk>/Experience/edit/', views.ExperienceCVUpdatde, name='cv_Experience_edit'),
     path('cv/<int:pk>/Experience/remove/', views.ExperienceCVDlt, name='cv_Experience_dlt'),
     path('cv/Contact', views.ContactCV, name='contact'),
+    path('cv/Messages', views.ContactCVMsg, name='msg'),
+
 
 ]
