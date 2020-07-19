@@ -1,11 +1,14 @@
 # Create your views here.
 from django.contrib.auth.decorators import login_required
+from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from .forms import CommentForm, PostForm , EducationForm,SkillsForm,WorkshopsForm,ExperienceForm,ContactForm
-from .models import Comment, Post, Education, Skills,Workshops,Experience
+from .forms import (CommentForm, ContactForm, EducationForm, ExperienceForm,
+                    PostForm, SkillsForm, WorkshopsForm)
+from .models import Comment, Education, Experience, Post, Skills, Workshops
+
 
 def CV(request):
   if request.method == 'GET':
