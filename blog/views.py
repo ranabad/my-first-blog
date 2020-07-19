@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
 from .forms import CommentForm, PostForm , EducationForm,SkillsForm,WorkshopsForm,ExperienceForm,ContactForm
-from .models import Comment, Post, Education, Skills,Workshops,Experience,Contact
+from .models import Comment, Post, Education, Skills,Workshops,Experience
 
 def CV(request):
   if request.method == 'GET':
