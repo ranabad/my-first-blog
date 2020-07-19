@@ -72,16 +72,17 @@
             <hr style=" border: 1px solid; color: #6b6e70;">
           
         
-        <br>
+        
         <p class="w3-large w3-text-theme"><b><i style="color:#86C232;" class="fa fa-heart fa-fw w3-margin-right"></i>Hobbies</b></p>
         <p>Meditation, Traveling, Event Planning</p>
-        
+        <hr style=" border: 1px solid; color: #6b6e70;">
+        <p class="w3-large w3-text-theme"><b><i style="color:#86C232;" class="fa fa-envelope fa-fw w3-margin-right"></i>Contact</b></p>
+        <h3 style=" font-size: 20pt;"><a href="{% url 'contact' %}" > Contact <Form></Form> <small></small></p></a></h3>
+
+
       </div>
     </div>
-    <form method="POST" class=post-form>
-      {% csrf_token %}
-      {{ form5}}
-      <button type="submit">SEND</button>
+ 
   
       <!-- End Left Column -->
       </div>

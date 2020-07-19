@@ -20,21 +20,23 @@ def CV(request):
         form2=SkillsForm()
         form3=WorkshopsForm()
         form4=ExperienceForm()
-        form5 =ContactForm()
-  else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['subject']
-            from_email = form.cleaned_data['from_email']
-            message = form.cleaned_data['message']
-            try:
-                send_mail(subject, message, from_email, ['rana.a.albadrani@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-        return redirect('/cv')
-  context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4,'form5':form5}
+  context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4}
   return render(request, 'blog/cv.html', context)
-
+def ContactCV(request):
+    form5 = ContactForm(request.POST)
+    if form.is_valid():
+        subject = form.cleaned_data['subject']
+        from_email = form.cleaned_data['from_email']
+        message = form.cleaned_data['message']
+        try:
+            send_mail(subject, message, from_email, ['rana.a.albadrani@gmail.com'])
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return redirect('/cv')
+    context= {'form5': form5}
+    return render(request, 'blog/cvContact.html', context)    
+   
+   
 def EducationCV(request):
     items = Education.objects.all()
     form = EducationForm()
