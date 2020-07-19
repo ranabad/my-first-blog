@@ -24,9 +24,9 @@ def CV(request):
   return render(request, 'blog/cv.html', context)
 def ContactCV(request):
     
-    form5= SkillsForm()
+    form5= ContactsForm()
     if request.method == "POST":
-        form5 = SkillsForm(request.POST)
+        form5 = ContactForm(request.POST)
         if form5.is_valid():
             form5.save()
         return redirect('/cv')  
