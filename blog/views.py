@@ -24,7 +24,7 @@ def CV(request):
   return render(request, 'blog/cv.html', context)
 def ContactCV(request):
     
-     form5= SkillsForm()
+    form5= SkillsForm()
     if request.method == "POST":
         form5 = SkillsForm(request.POST)
         if form5.is_valid():
