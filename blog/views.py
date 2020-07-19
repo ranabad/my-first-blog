@@ -23,15 +23,13 @@ def CV(request):
   context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4}
   return render(request, 'blog/cv.html', context)
 def ContactCV(request):
-    
-    form5= ContactsForm()
+    form= ContactsForm()
     if request.method == "POST":
-        form5 = ContactForm(request.POST)
-        if form5.is_valid():
-            form5.save()
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
         return redirect('/cv')  
-    
-    context= {'form5': form5}
+    context= {'form': form}
     return render(request, 'blog/cvContactForm.html', context)        
 @login_required    
 def ContactCVMsg(request):
@@ -39,8 +37,6 @@ def ContactCVMsg(request):
     form=ContactForm()
     context= {'con': con,'form': form}
     return render(request, 'blog/cvContactMsg.html', context)
-
-
 def EducationCV(request):
     items = Education.objects.all()
     form = EducationForm()
