@@ -25,9 +25,9 @@ def CV(request):
 def ContactCV(request):
     form5 = ContactForm(request.POST)
     if form5.is_valid():
-        subject = form.cleaned_data['subject']
-        from_email = form.cleaned_data['from_email']
-        message = form.cleaned_data['message']
+        subject = form5.cleaned_data['subject']
+        from_email = form5.cleaned_data['from_email']
+        message = form5.cleaned_data['message']
         try:
             send_mail(subject, message, from_email, ['rana.a.albadrani@gmail.com'])
         except BadHeaderError:
