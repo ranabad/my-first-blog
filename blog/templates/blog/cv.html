@@ -78,7 +78,7 @@
         
       </div>
     </div>
-    <form method="POST" action="{% url 'contact' %}">
+    <form method="POST" class=post-form>
       {% csrf_token %}
       {{ form5}}
       <button type="submit">SEND</button>
