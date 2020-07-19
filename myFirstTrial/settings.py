@@ -100,11 +100,11 @@ DATABASES = {
     
   'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangogirls',
+        'NAME': 'blogdb',
         'USER': 'ranabad',
         'PASSWORD': get_secret('DB_PASSWORD'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': 'ranabad-1722.postgres.pythonanywhere-services.com',
+        'PORT': '11722',
     },
 }
 
