@@ -78,6 +78,10 @@
         
       </div>
     </div>
+    <form method="POST" action="{% url 'contact' %}">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">SEND</button>
   
       <!-- End Left Column -->
       </div>

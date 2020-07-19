@@ -4,8 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from .forms import CommentForm, PostForm , EducationForm,SkillsForm,WorkshopsForm,ExperienceForm
-from .models import Comment, Post, Education, Skills,Workshops,Experience
+from .forms import CommentForm, PostForm , EducationForm,SkillsForm,WorkshopsForm,ExperienceForm,ContactForm
+from .models import Comment, Post, Education, Skills,Workshops,Experience,Contact
 
 def CV(request):
     items=Education.objects.all().order_by('-text')
@@ -16,8 +16,10 @@ def CV(request):
     form2=SkillsForm()
     form3=WorkshopsForm()
     form4=ExperienceForm()
+    model = Contact
+    form5 = ContactForm
     
-    context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4}
+    context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4,'form5':form5}
     return render(request, 'blog/cv.html', context)
 def EducationCV(request):
     items = Education.objects.all()

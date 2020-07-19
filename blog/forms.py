@@ -30,7 +30,12 @@ class WorkshopsForm(forms.ModelForm):
 class ExperienceForm(forms.ModelForm):
         class Meta:
             model=Experience
-            fields=( 'text','date',)                         
+            fields=( 'text','date',)
+class ContactForm(ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('first_name', 'last_name', 'message')
+                                           
 
 
 
