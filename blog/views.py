@@ -17,7 +17,7 @@ def CV(request):
         form2=SkillsForm()
         form3=WorkshopsForm()
         form4=ExperienceForm()
-        form5 = ContactForm()
+        form5 =ContactForm()
   else:
     form5 = ContactForm(request.POST)
     if form.is_valid():
