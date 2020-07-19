@@ -18,7 +18,7 @@ def CV(request):
         form3=WorkshopsForm()
         form4=ExperienceForm()
         form5 =ContactForm()
-    else:
+ else:
         form = ContactForm(request.POST)
         if form.is_valid():
             subject = form.cleaned_data['subject']
