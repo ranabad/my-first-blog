@@ -34,7 +34,7 @@ def ContactCV(request):
             return HttpResponse('Invalid header found.')
         return redirect('/cv')
     context= {'form5': form5}
-    return render(request, 'blog/cvContact.html', context)    
+    return render(request, 'blog/cvContactForm.html', context)    
    
    
 def EducationCV(request):
