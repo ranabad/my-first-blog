@@ -13,11 +13,13 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import datetime
 import json
 import os
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
+Sfile= os.path.dirname(__file__)
+key = os.path.join(Sfile, "secrets.json")
 
-with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+with open(os.path.join(Sfile, 'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
 
 def get_secret(setting, secrets=secrets):
@@ -29,7 +31,9 @@ def get_secret(setting, secrets=secrets):
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -95,10 +99,12 @@ WSGI_APPLICATION = 'myFirstTrial.wsgi.application'
 DATABASES = {
     
   'default': {
-        'ENGINE': 'django.db.backends.postgres',
-        'NAME': 'myblogdb',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangogirls',
         'USER': 'ranabad',
         'PASSWORD': get_secret('DB_PASSWORD'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     },
 }
 
@@ -135,15 +141,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/'
-TEMPLATE_PATH = os.path.join(BASE_DIR, "templates")
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
 
-]
+
