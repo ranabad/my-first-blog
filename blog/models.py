@@ -67,7 +67,7 @@ class Contact(models.Model):
     subject = models.CharField(max_length=200)
     message = models.TextField(max_length=200)
     def __str__(self):
-        con = '{from_email} {subject} {message}'
+        con = '{from_name} {subject} {message}'
         return con.format(self)         
 
 
