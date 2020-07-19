@@ -156,5 +156,5 @@ LOGIN_REDIRECT_URL = '/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-DESKTOP_TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, 'blog'),)
-MOBILE_TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, 'blog/mobile'),)
+DESKTOP_TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'blog'),)
+MOBILE_TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'blog/mobile'),)
