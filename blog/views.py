@@ -28,7 +28,7 @@ def CV(request):
                 send_mail(subject, message, from_email, ['rana.a.albadrani@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect('/cv')
+        return redirect('/cv')
  context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4,'form5':form5}
  return render(request, 'blog/cv.html', context)
 
