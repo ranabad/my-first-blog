@@ -11,7 +11,7 @@
     
       <div>
       {% for con in con %}
-      <p>Sender={{con.from_name}} Subject={{con.subject}} Message={{con.message}}<p>
+      <p>Sender Email={{con.from_email}}Sender={{con.from_name}} Subject={{con.subject}} Message={{con.message}}<p>
       <a class="myButton"href="{% url 'msg_remove' pk=con.pk %}"><span style="color:#86C232;" class="glyphicon glyphicon-remove"></span></a>
        
       {%endfor%} 
