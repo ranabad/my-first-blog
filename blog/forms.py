@@ -35,7 +35,7 @@ class ExperienceForm(forms.ModelForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model=Contact
-        fields=( 'from_email','subject','message')
+        fields=( 'from_email','from_name','subject','message')
         
 
  
