@@ -36,7 +36,12 @@ def ContactCVMsg(request):
     con = Contact.objects.all()
     form=ContactForm()
     context= {'con': con,'form': form}
-    return render(request, 'blog/cvContactMsg.html', context)
+    return render(request, 'blog/cvContactMsg.html', context)  
+@login_required
+def msg_remove(request, pk):
+    con = get_object_or_404(con, pk=pk)
+    con.delete()
+    return redirect('cv/Messages')      
 def EducationCV(request):
     items = Education.objects.all()
     form = EducationForm()
