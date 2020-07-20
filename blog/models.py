@@ -65,7 +65,7 @@ class Experience(models.Model):
 class Contact(models.Model):
     from_name =models.CharField(max_length=200)
     subject = models.CharField(max_length=200)
-    message = models.TextField(min_length=100)
+    message = models.TextField()
     def __str__(self):
         con = '{from_name} {subject} {message}'
         return con.format(self)         
