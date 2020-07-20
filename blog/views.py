@@ -39,7 +39,7 @@ def ContactCVMsg(request):
     return render(request, 'blog/cvContactMsg.html', context)  
 @login_required
 def msg_remove(request, pk):
-    con = get_object_or_404(con, pk=pk)
+    con = get_object_or_404(Contact, pk=pk)
     con.delete()
     return redirect('cv/Messages')      
 def EducationCV(request):
