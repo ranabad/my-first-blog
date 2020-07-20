@@ -63,11 +63,11 @@ class Experience(models.Model):
         exp = '{text} {date}'
         return exp.format(self)
 class Contact(models.Model):
-    from_name =models.CharField(max_length=200)
+    from_email =models.EmailField()
     subject = models.CharField(max_length=200)
     message = models.TextField()
     def __str__(self):
-        con = '{from_name} {subject} {message}'
+        con = '{from_email} {subject} {message}'
         return con.format(self)         
 
 
