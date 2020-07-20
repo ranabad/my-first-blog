@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
 
+<h3><a href="{% url 'cv' %}" > Contact<small></small></p></a></h3>
 <form method="POST" class=post-form>
     {% csrf_token %}
     {{form}}
