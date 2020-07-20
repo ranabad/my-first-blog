@@ -41,7 +41,7 @@ def ContactCVMsg(request):
 def msg_remove(request, pk):
     con = get_object_or_404(Contact, pk=pk)
     con.delete()
-    return redirect('cv/Messages')      
+    return redirect('cv')      
 def EducationCV(request):
     items = Education.objects.all()
     form = EducationForm()
