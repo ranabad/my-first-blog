@@ -23,7 +23,7 @@ def CV(request):
   context= {'items': items,'form1': form1,'form2': form2,'skills': skills,'work': work,'form3': form3,'exp': exp,'form4': form4}
   return render(request, 'blog/cv.html', context)
 def ContactCV(request):
-    form= ContactsForm()
+    form= ContactForm()
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
