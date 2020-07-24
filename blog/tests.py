@@ -240,9 +240,6 @@ class ExperienceFormTest(TestCase):
             form = ExperienceForm()
             self.assertIn('for="id_text"', form.as_p())
             self.assertIn('for="id_date"', form.as_p()) 
-
-
-
 class WorkshopModelTest(TestCase):
      def test_saving_and_retrieving_items(self):
          first_item = Workshops()
