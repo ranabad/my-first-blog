@@ -170,6 +170,24 @@ a:active {
 
 
         }
+        .Rana-container{
+                size: cover;
+         position: center center;
+                
+                      
+              }
+              .w3-container{
+                size: cover;
+                position: center center;
+              }
+              .w-container{
+    
+                size: cover;
+                position: center center;
+                
+                      
+              }
+
 
 
 }
