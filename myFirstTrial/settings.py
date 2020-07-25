@@ -18,7 +18,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
 Sfile= os.path.dirname(__file__)
 key = os.path.join(Sfile, "secrets.json")
-with open(os.path.join(Sfile 'secrets.json')) as secrets_file:
+with open(os.path.join(Sfile,'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
 
 def get_secret(setting, secrets=secrets):
