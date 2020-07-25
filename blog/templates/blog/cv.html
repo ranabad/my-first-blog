@@ -1,7 +1,7 @@
 <style>
   .vl {
     border-right: 6px solid #86C232;
-    height: 500px;
+    height: 1980px;
     margin-right:-22%;
   }
   .Rana-container{
@@ -93,7 +93,7 @@
       
       
       <!-- Right Column -->
-      <div class="Rana-container">
+    <div class="Rana-container">
        
          <div class="w-container">
           <h2 style=" font-size: 20pt;">Profile</h2>
@@ -110,11 +110,11 @@
       
       
         <div class="w-container">
-    {% if user.is_authenticated %}
-      <h3 style=" font-size: 20pt;"><a href="{% url 'cvEducation' %}" > Education <small></small></p></a></h3>
-      {%else%}
-      <h3 >Education</h3>
-      {% endif %}
+       {% if user.is_authenticated %}
+       <h3 style=" font-size: 20pt;"><a href="{% url 'cvEducation' %}" > Education <small></small></p></a></h3>
+       {%else%}
+       <h3 >Education</h3>
+       {% endif %}
       
         {% for items in items %}
         
@@ -125,15 +125,15 @@
         {%endfor%} 
        
        <hr style=" border: 1px solid; color: #6b6e70;">
-      </div> 
+       </div> 
       
      
-      <div class="w-container">
+        <div class="w-container">
         {% if user.is_authenticated %}
-      <h4 style=" font-size: 20pt;"><a href="{% url 'cvSkills' %}" >Skills <small></small></p></a></h4>
-      {%else%}
-      <h4 >Skills</h4>
-      {% endif %}
+        <h4 style=" font-size: 20pt;"><a href="{% url 'cvSkills' %}" >Skills <small></small></p></a></h4>
+        {%else%}
+         <h4 >Skills</h4>
+        {% endif %}
         
           {% for skills in skills %}
           
@@ -143,9 +143,9 @@
           {%endfor%} 
           
          <hr style=" border: 1px solid; color: #6b6e70;">
-        </div> 
+         </div> 
        
-        <div class="w-container">
+         <div class="w-container">
           {% if user.is_authenticated %}
           <h5 style=" font-size: 20pt;" ><a href="{% url 'cvExperience' %}" > Experience <small></small></p></a></h5>
           {%else%}
@@ -183,7 +183,7 @@
             {%endfor%} 
               
           </div> 
-      </div> 
+      
       
 
 
@@ -191,7 +191,7 @@
       
       <!-- End Right Column -->
       
-    
+    </div> 
   
   
   
