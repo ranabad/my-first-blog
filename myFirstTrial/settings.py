@@ -16,9 +16,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
-
-key = os.path.join(BASE_DIR, "secrets.json")
-with open(os.path.join(BASE_DIR 'secrets.json')) as secrets_file:
+Sfile= os.path.dirname(__file__)
+key = os.path.join(Sfile, "secrets.json")
+with open(os.path.join(Sfile 'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
 
 def get_secret(setting, secrets=secrets):
