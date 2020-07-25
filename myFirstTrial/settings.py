@@ -16,10 +16,9 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from django.core.exceptions import ImproperlyConfigured
 from django.utils import timezone
-Sfile= os.path.dirname(__file__)
-key = os.path.join(Sfile, "secrets.json")
 
-with open(os.path.join(Sfile, 'secrets.json')) as secrets_file:
+key = os.path.join(BASE_DIR, "secrets.json")
+with open(os.path.join(BASE_DIR 'secrets.json')) as secrets_file:
     secrets = json.load(secrets_file)
 
 def get_secret(setting, secrets=secrets):
@@ -149,10 +148,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/'
-
-
-
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
