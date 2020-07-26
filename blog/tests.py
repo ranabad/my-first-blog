@@ -22,7 +22,7 @@ class CVEducationTest(TestCase):
          user.save()
          c = Client()
          logged_in = c.login(username='testuser', password='12345')
-         login_success = c.login(username = self.username, password = self.password)
+         login_success = c.login(user.credentials)
          self.assertTrue(login_success)
          response = self.client.get('/cv/Education')
          self.assertTemplateUsed(response, 'blog/cvEducation.html')
