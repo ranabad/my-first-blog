@@ -18,19 +18,22 @@ from pyvirtualdisplay import Display
 
 display = Display(visible=0, size=(800, 600))
 display.start()
-browser = webdriver.Firefox()
-try:
-   
-    browser.get('https://ranabad.pythonanywhere.com/cv')
-  
-    print(browser.title) 
-    html = browser.page_source
-    time.sleep(10)
-    print(str(html))
+class NewVisitorTest(unittest.TestCase):  
 
-finally:
-    browser.quit()
-    display.stop() 
+    def setUp(self):  
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):  
+        self.browser.quit()
+        display.stop() 
+
+    def test_can_start_show_cv_page(self):  
+       self.browser.get('https://ranabad.pythonanywhere.com/cv')
+  
+        self.assertIn("Rana's Personal Blog", self.browser.title)
+        html = browser.page_source
+        time.sleep(10)
+          print(str(html))
 
 if __name__ == '__main__':  
     unittest.main(warnings='ignore')    
