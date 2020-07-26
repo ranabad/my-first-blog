@@ -6,7 +6,7 @@ from django.utils import timezone
 
 from blog.forms import EducationForm, ExperienceForm, SkillsForm, WorkshopsForm
 from blog.models import Education, Experience, Skills, Workshops
-from blog.views import CV, EducationCV, ExperienceCV, SkillsCV, WorkshopsCV
+from blog.views import CV, EducationCV, ExperienceCV, SkillsCV, WorkshopsCV,EducationCVUpdatde
 
 
 class CVTestView(TestCase):
@@ -32,7 +32,7 @@ class CVEducationTest(TestCase):
          print(posting.content)
          pk=Education.objects.first().get(id)
          editing=c.get('/cv/{pk}/Education/edit/')
-         editing=c.post('/cv/{pk}/Education/edit/',{'text':'abc', 'date':'1'})
+         editing=c.post('/cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'1'})
          editing.status_code
          self.assertEqual(Education.objects.count(),1)
          editing=c.get('/cv')
