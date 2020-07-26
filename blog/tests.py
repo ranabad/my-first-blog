@@ -31,7 +31,7 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
          pk=posting.pk
-         updatePost=c.post('/cv/'+pk'/Education/edit',{'text':'abcd', 'date':'yello'})
+         updatePost=c.post('/cv/"{{pk}}"/Education/edit',{'text':'abcd', 'date':'yello'})
 
 
      def test_redirects_after_POST_in_Education(self):
