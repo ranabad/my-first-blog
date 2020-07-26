@@ -28,6 +28,7 @@ class CVEducationTest(TestCase):
          posting=c.post('/cv/Education',{'text':'Cheddar Talk', 'date':'Thoughts on cheese.'})
          posting.status_code
          self.assertEqual(Education.objects.count(),1)
+         posting.save()
          posting=c.get('/cv')
          print(posting.content)
          posting=c.post('/cv/1/Education/edit/',{'text':'abcd', 'date':'yello'})
