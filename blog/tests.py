@@ -32,7 +32,8 @@ class CVEducationTest(TestCase):
          print(posting.content)
          editing=c.get('/cv/<1:pk>/Education/edit/')
          form=EducationForm()
-         form.clean()
+         text = form.cleaned_data['text']
+         date = form.cleaned_data['date']
          print("-------------------------------------------------------------------")
          editing=c.post('/cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'1'})
          editing.status_code
