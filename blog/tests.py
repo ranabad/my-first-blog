@@ -31,7 +31,7 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
          r=Education.objects.all()
-         print(str({{r.id}}  {{r.text}} {{r.date}}))
+         print(str({{r.id}}{{r.text}}{{r.date}}))
          #editing=c.get('/cv/1/Education/edit/')
          #editing=c.post('/cv/1/Education/edit/',{'text':'abc', 'date':'1'})
          #editing.status_code
