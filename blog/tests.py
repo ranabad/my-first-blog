@@ -30,21 +30,12 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-     def test_uses_CV_template3(self):
-         response = self.client.get('/cv/Education')
-         self.assertTemplateUsed(response, 'blog/cvEducation.html')
-         user = User.objects.create(username='testuser')
-         user.set_password('12345')
-         user.save()
-         c = Client()
-         logged_in = c.login(username='testuser', password='12345')
-         self.assertTrue(logged_in) 
-         print(response.content)
-         updatePost=c.post('/cv/1/Education/edit/',{'text':'abcd', 'date':'yello'})
-         updatePost.status_code
+         posting=c.post('/cv/1/Education/edit/',{'text':'abcd', 'date':'yello'})
+         posting.status_code
          self.assertEqual(Education.objects.count(),1)
-         updatePost=c.get('/cv')
-         print(updatePost.content)
+         posting=c.get('/cv')
+         print("-----------------------------------")
+         print(posting.content)
         
 
 
