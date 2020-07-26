@@ -32,6 +32,7 @@ class CVEducationTest(TestCase):
          print(posting.content)
          editing=c.get('/cv/<1:pk>/Education/edit/')
          EducationForm.clean
+        print("--------------------------------R-----------------------------------")
          print(response.content)
          print("-------------------------------------------------------------------")
          editing=c.post('/cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'1'})
