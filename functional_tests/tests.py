@@ -17,7 +17,7 @@ try:
     print(browser.title) 
     html = browser.page_source
     time.sleep(10)
-    print(html)
+    print(str(html))
 
 finally:
     browser.quit()
