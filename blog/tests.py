@@ -32,6 +32,11 @@ class CVEducationTest(TestCase):
          print(posting.content)
          pk=Education.objects.first().pk
          updatePost=c.post('/cv/"{{pk}}"/Education/edit',{'text':'abcd', 'date':'yello'})
+         updatePost.status_code
+         self.assertEqual(Education.objects.count(),1)
+         updatePost=c.get('/cv')
+         print(updatePost.content)
+        
 
 
      def test_redirects_after_POST_in_Education(self):
