@@ -85,7 +85,6 @@ def SkillsCV(request):
 @login_required    
 def EducationCVUpdatde(request, pk):
     items = Education.objects.get(pk=pk)
-    
     form = EducationForm(instance=items)
     if request.method == "POST":
         form = EducationForm(request.POST, instance=items)
