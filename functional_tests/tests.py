@@ -14,7 +14,7 @@ try:
    
     browser.get('https://ranabad.pythonanywhere.com/cv')
   
-    assertIn('Personal Blog', browser.title)  
+    print(browser.title) 
     html = browser.page_source
     time.sleep(10)
     print(html)
