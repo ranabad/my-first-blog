@@ -39,7 +39,7 @@ class CVEducationTest(TestCase):
          c = Client()
          logged_in = c.login(username='testuser', password='12345')
          self.assertTrue(logged_in) 
-         updatePost=c.post('/cv/1/Education/edit',{'text':'abcd', 'date':'yello'})
+         updatePost=c.post('/cv/1/Education/edit/',{'text':'abcd', 'date':'yello'})
          updatePost.status_code
          self.assertEqual(Education.objects.count(),1)
          updatePost=c.get('/cv')
