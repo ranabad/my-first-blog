@@ -7,7 +7,7 @@ from pyvirtualdisplay import Display
 
 display = Display(visible=0, size=(800, 600))
 display.start()
-browser = webdriver.Firefox("home/ranabad/ranabad.pythonanywhere.com/functional_tests/ geckodriver.log")
+browser = webdriver.Firefox("home/ranabad/ranabad.pythonanywhere.com/functional_tests/geckodriver.log")
 try:
    
     browser.get('ranabad.pythonanywhere.com')
