@@ -7,12 +7,12 @@ from blog.forms import EducationForm,SkillsForm,WorkshopsForm,ExperienceForm
 from blog.models import Education,Skills,Workshops,Experience
 from blog.views import EducationCV,SkillsCV,WorkshopsCV,ExperienceCV,CV
 from django.http import HttpResponse
-class CVTest(TestCase):
+class CVTestView(TestCase):
      def test_uses_CV_template(self):
          response = self.client.get('/cv')
          self.assertTemplateUsed(response, 'blog/cv.html')
 
-class CVEducationiewsTest(TestCase):
+class CVEducationTest(TestCase):
 
      def test_uses_CV_template(self):
          response = self.client.get('/cv/Education')
@@ -20,8 +20,9 @@ class CVEducationiewsTest(TestCase):
 
      def test_can_save_a_POST_request_in_Education(self):
          self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':'Present','grade':'Not applicable'})
+         self.assertEqual(Education.objects.count(),1)
          new_item = Education.objects.first()
-         self.assertEqual(Education.objects.count(),0)
+         self.assertEqual(new_item.text, 'A new list item')
      def test_redirects_after_POST_in_Education(self):
          response = self.client.post('/cv/Education', data={'item_text': 'A new list item'})
          self.assertEqual(response.status_code, 302)
