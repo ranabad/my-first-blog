@@ -12,7 +12,7 @@ display.start()
 browser = webdriver.Firefox()
 try:
    
-    browser.get('ranabad.pythonanywhere.com')
+    browser.get('https://ranabad.pythonanywhere.com/cv')
   
     assertIn('Personal Blog', browser.title)  
     html = browser.page_source
