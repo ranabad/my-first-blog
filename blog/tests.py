@@ -16,15 +16,14 @@ class CVTestView(TestCase):
 
 class CVEducationTest(TestCase):
 
-     def test_uses_CV_template(self):
-         response = self.client.get('/cv/Education')
-         self.assertTemplateUsed(response, 'blog/cvEducation.html') 
-     def test_can_save_a_POST_request_in_Education(self):
+     def test_uses_CV_template(self): 
          user = User.objects.create(username='testuser')
          user.set_password('12345')
          user.save()
          c = Client()
          logged_in = c.login(username='testuser', password='12345')
+         response = self.client.get('/cv/Education')
+         self.assertTemplateUsed(response, 'blog/cvEducation.html')
          self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':'Present','grade':'Not applicable'})
          self.assertEqual(Education.objects.count(),1)
          new_item = Education.objects.first()
