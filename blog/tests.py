@@ -31,7 +31,7 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
      def test_uses_CV_template3(self):
-           response = self.client.get('/cv/Education')
+         response = self.client.get('/cv/Education')
          self.assertTemplateUsed(response, 'blog/cvEducation.html')
          user = User.objects.create(username='testuser')
          user.set_password('12345')
