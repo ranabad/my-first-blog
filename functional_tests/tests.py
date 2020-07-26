@@ -13,9 +13,9 @@ try:
     browser.get('http://www.ranabad.pythonanywhere.com')
   
     assertIn('Personal Blog', browser.title)  
-        html = browser.page_source
-        time.sleep(10)
-        print(html)
+    html = browser.page_source
+    time.sleep(10)
+    print(html)
 
 finally:
     
