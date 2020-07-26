@@ -16,14 +16,7 @@ class CVTestView(TestCase):
 
 class CVEducationTest(TestCase):
 
-     def test_uses_CV_template2(self):
-         response = self.client.get('/cv/Education')
-         self.assertTemplateUsed(response, 'blog/cvEducation.html')
-         user = User.objects.create(username='testuser')
-         user.set_password('12345')
-         user.save()
-         c = Client()
-         logged_in = c.login(username='testuser', password='12345')
+     def test_uses_CV_template2(self)
          self.assertTrue(logged_in) 
          posting=c.post('/cv/Education',{'text':'Cheddar Talk', 'date':'Thoughts on cheese.'})
          posting.status_code
@@ -31,6 +24,13 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
      def test_uses_CV_template2(self):  
+         response = self.client.get('/cv/Education')
+         self.assertTemplateUsed(response, 'blog/cvEducation.html')
+         user = User.objects.create(username='testuser')
+         user.set_password('12345')
+         user.save()
+         c = Client()
+         logged_in = c.login(username='testuser', password='12345')
          pk=Education.objects.first().pk
          updatePost=c.post('/cv/"{{pk}}"/Education/edit',{'text':'abcd', 'date':'yello'})
          updatePost.status_code
