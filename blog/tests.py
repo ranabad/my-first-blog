@@ -19,9 +19,14 @@ class CVEducationTest(TestCase):
      def test_uses_CV_template2(self):
          response = self.client.get('/cv/Education')
          self.assertTemplateUsed(response, 'blog/cvEducation.html')
-         entry=Education(id=1, text='Cheddar Talk', date='Thoughts on cheese.')
-         entry.save()
-         
+         user = User.objects.create(username='testuser')
+         user.set_password('12345') dddd
+         user.save()
+         c = Client()
+         logged_in = c.login(username='testuser', password='12345')
+         self.assertTrue(logged_in) 
+         posting=c.post('/cv/Education',{'text':'Cheddar Talk', 'date':'Thoughts on cheese.'})
+         posting.status_code
          self.assertEqual(Education.objects.count(),1)
          print(Education.objects.all())
          new_item = Education.objects.first()
@@ -268,10 +273,5 @@ class WorkshopFormTest(TestCase):
             self.assertIn('for="id_date"', form.as_p()) 
 
 
- #def test_uses_CV_template(self): 
-        """  user = User.objects.create(username='testuser')
-         user.set_password('12345') dddd
-         user.save()
-         c = Client()
-         logged_in = c.login(username='testuser', password='12345')
-         self.assertTrue(logged_in) """
+  
+         
