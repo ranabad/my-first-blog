@@ -23,6 +23,7 @@ class CVEducationTest(TestCase):
          entry.save()
          
          self.assertEqual(Education.objects.count(),1)
+         print(Education.objects.all())
          new_item = Education.objects.first()
          self.assertEqual(new_item.text, 'Cheddar Talk')
      def test_redirects_after_POST_in_Education(self):
