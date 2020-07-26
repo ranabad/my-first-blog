@@ -31,9 +31,7 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
          editing=c.get('/cv/<1:pk>/Education/edit/')
-         edu=Education.objects.all()
-         text_o=edu.text
-         print(text_o)
+         EducationForm.clean
          print("-------------------------------------------------------------------")
          editing=c.post('/cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'1'})
          editing.status_code
