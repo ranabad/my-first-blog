@@ -28,9 +28,8 @@ class CVEducationTest(TestCase):
          posting=c.post('/cv/Education',{'text':'Cheddar Talk', 'date':'Thoughts on cheese.'})
          posting.status_code
          self.assertEqual(Education.objects.count(),1)
-         print(Education.objects.all())
-         new_item = Education.objects.first()
-         self.assertEqual(new_item.text, 'Cheddar Talk')
+         posting=c.get('/cv')
+         posting.content
      def test_redirects_after_POST_in_Education(self):
          response = self.client.post('/cv/Education', data={'item_text': 'A new list item'})
          self.assertEqual(response.status_code, 302)
