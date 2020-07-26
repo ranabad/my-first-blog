@@ -1,4 +1,5 @@
 import time
+import unittest
 
 from django.test import LiveServerTestCase
 from selenium import webdriver
@@ -7,7 +8,7 @@ from pyvirtualdisplay import Display
 
 display = Display(visible=0, size=(800, 600))
 display.start()
-browser = webdriver.Firefox("/functional_tests/geckodriver")
+browser = webdriver.Firefox()
 try:
    
     browser.get('ranabad.pythonanywhere.com')
@@ -21,9 +22,5 @@ finally:
     browser.quit()
     display.stop() 
 
-       
-
-        
-        
-
-
+if __name__ == '__main__':  
+    unittest.main(warnings='ignore')    
