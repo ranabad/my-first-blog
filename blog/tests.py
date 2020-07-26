@@ -30,7 +30,7 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         editing=c.get('/cv/<1:pk>/Education/edit/')
+         editing=c.get('/cv/1/Education/edit/')
          EducationForm.clean
          print("--------------------------------R-----------------------------------")
          print(editing.content)
