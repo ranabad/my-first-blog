@@ -24,7 +24,7 @@ class CVEducationTest(TestCase):
          logged_in = c.login(username='testuser', password='12345')
          response = self.client.get('/cv/Education')
          self.assertTemplateUsed(response, 'blog/cvEducation.html')
-         self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':'Present','grade':'Not applicable'})
+         self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':'Present'})
          self.assertEqual(Education.objects.count(),1)
          new_item = Education.objects.first()
          self.assertEqual(new_item.text, 'A new list item')
