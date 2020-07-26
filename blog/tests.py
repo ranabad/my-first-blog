@@ -31,7 +31,7 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
          pk=Education.objects.first().pk
-         updatePost=c.post('/cv/"{{pk}}"/Education/edit',{'text':'abcd', 'date':'yello'})
+         updatePost=c.post('/cv/1/Education/edit',{'text':'abcd', 'date':'yello'})
          updatePost.status_code
          self.assertEqual(Education.objects.count(),1)
          updatePost=c.get('/cv')
