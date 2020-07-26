@@ -18,7 +18,7 @@ class CVEducationTest(TestCase):
 
      #def test_uses_CV_template(self): 
         """  user = User.objects.create(username='testuser')
-         user.set_password('12345')
+         user.set_password('12345') dddd
          user.save()
          c = Client()
          logged_in = c.login(username='testuser', password='12345')
