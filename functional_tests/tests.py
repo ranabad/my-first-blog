@@ -29,11 +29,10 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_start_show_cv_page(self):  
        self.browser.get('https://ranabad.pythonanywhere.com/cv')
-  
-        self.assertIn("Rana's Personal Blog", self.browser.title)
-        html = browser.page_source
-        time.sleep(10)
-          print(str(html))
+       self.assertIn("Rana's Personal Blog", self.browser.title)
+       html = browser.page_source
+       time.sleep(10)
+       print(str(html))
 
 if __name__ == '__main__':  
     unittest.main(warnings='ignore')    
