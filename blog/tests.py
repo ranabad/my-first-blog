@@ -16,13 +16,6 @@ class CVTestView(TestCase):
 
 class CVEducationTest(TestCase):
 
-     #def test_uses_CV_template(self): 
-        """  user = User.objects.create(username='testuser')
-         user.set_password('12345') dddd
-         user.save()
-         c = Client()
-         logged_in = c.login(username='testuser', password='12345')
-         self.assertTrue(logged_in) """
      def test_uses_CV_template2(self):
          response = self.client.get('/cv/Education')
          self.assertTemplateUsed(response, 'blog/cvEducation.html')
@@ -272,3 +265,12 @@ class WorkshopFormTest(TestCase):
             form = WorkshopsForm()
             self.assertIn('for="id_text"', form.as_p())
             self.assertIn('for="id_date"', form.as_p()) 
+
+
+ #def test_uses_CV_template(self): 
+        """  user = User.objects.create(username='testuser')
+         user.set_password('12345') dddd
+         user.save()
+         c = Client()
+         logged_in = c.login(username='testuser', password='12345')
+         self.assertTrue(logged_in) """
