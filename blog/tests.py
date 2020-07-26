@@ -1,12 +1,14 @@
-from django.http import HttpRequest
-from django.test import TestCase
+from django.contrib.auth.models import User
+from django.http import HttpRequest, HttpResponse
+from django.test import Client, TestCase
 from django.urls import resolve, reverse
 from django.utils import timezone
 
-from blog.forms import EducationForm,SkillsForm,WorkshopsForm,ExperienceForm
-from blog.models import Education,Skills,Workshops,Experience
-from blog.views import EducationCV,SkillsCV,WorkshopsCV,ExperienceCV,CV
-from django.http import HttpResponse
+from blog.forms import EducationForm, ExperienceForm, SkillsForm, WorkshopsForm
+from blog.models import Education, Experience, Skills, Workshops
+from blog.views import CV, EducationCV, ExperienceCV, SkillsCV, WorkshopsCV
+
+
 class CVTestView(TestCase):
      def test_uses_CV_template(self):
          response = self.client.get('/cv')
@@ -16,9 +18,13 @@ class CVEducationTest(TestCase):
 
      def test_uses_CV_template(self):
          response = self.client.get('/cv/Education')
-         self.assertTemplateUsed(response, 'blog/cvEducation.html')
-
+         self.assertTemplateUsed(response, 'blog/cvEducation.html') 
      def test_can_save_a_POST_request_in_Education(self):
+         user = User.objects.create(username='testuser')
+         user.set_password('12345')
+         user.save()
+         c = Client()
+         logged_in = c.login(username='testuser', password='12345')
          self.client.post('/cv/Education', data={'item_text': 'A new list item', 'date':'Present','grade':'Not applicable'})
          self.assertEqual(Education.objects.count(),1)
          new_item = Education.objects.first()
@@ -263,7 +269,3 @@ class WorkshopFormTest(TestCase):
             form = WorkshopsForm()
             self.assertIn('for="id_text"', form.as_p())
             self.assertIn('for="id_date"', form.as_p()) 
-
-
-
-
