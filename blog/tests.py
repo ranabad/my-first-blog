@@ -30,7 +30,7 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         r=Education.objects.all().refresh_from_db()
+         r=Education.objects.all().clean()
          print(posting)
          
         
