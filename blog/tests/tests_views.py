@@ -5,9 +5,13 @@ import json
 
 
 class TestViews(TestCase):
+    def setUp(self):
+        self.client=Client()
+        self.url_cv=reverse('cv')
     def test_CV_contents_GET(self):
-        c=Client()
-        response=c.get(reverse('cv'))
+        response=self.client.get(self.url_cv)
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response,'blog/cv.html')
+
+
         
