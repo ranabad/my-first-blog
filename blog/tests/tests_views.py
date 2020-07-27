@@ -14,7 +14,7 @@ class TestViews(TestCase):
         user.set_password('12345')
         user.save()
         self.c = Client()
-        logged_in = c.login(username='testuser', password='12345')
+        logged_in =self.c.login(username='testuser', password='12345')
         self.assertTrue(logged_in) 
         self.url_cv=reverse('cv')
         self.url_edu=reverse('cvEducation')
