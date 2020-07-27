@@ -1,5 +1,5 @@
 from django.test import SimpleTestCase
-from danjgo.urls import reverse,resolve
+from django.urls import reverse,resolve
 from blog.views import EducationCV
 
 
