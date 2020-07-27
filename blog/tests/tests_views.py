@@ -16,7 +16,7 @@ class TestViews(TestCase):
     def test_CV_contents_with_POST(self):
         edu=Education.objects.create(text='abc',date='123')
         response=self.client.post(self.url_edu,{'text':'abc','date':'123'})
-        self.assertEquals(self.assertEquals(response.status_code,302))
+        self.assertEquals(response.status_code,302))
         self.assertEquals(self.edu.first().text,'abc')
 
         
