@@ -20,7 +20,7 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url_skill).func,SkillsCV)
         self.assertEquals(resolve(url_workshop).func,WorkshopsCV)
     def test_edu_skills_workshop_exp_update_url_is_resolved(self):
-        url_skill=reverse('cv_Skills_edit',args=[0-9])
+        url_skill=reverse('cv_Skills_edit',args=[1])
         self.assertEquals(resolve(url_skill).func,SkillsCVUpdatde)
 
 
