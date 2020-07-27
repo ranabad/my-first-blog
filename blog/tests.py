@@ -31,7 +31,7 @@ class CVEducationTest(TestCase):
          posting=c.get('/cv')
          print(posting.content)
          
-         update_url =reverse("cv/:/Education/edit/", args=[self.kwargs['pk'])
+         update_url =reverse("cv/:/Education/edit/", kwargs={'pk': self.kwargs['pk']})
             # GET the form
          r = self.client.get(update_url)
 
