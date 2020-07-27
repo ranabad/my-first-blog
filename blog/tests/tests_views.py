@@ -25,9 +25,9 @@ class TestViews(TestCase):
     def test_CV_contents_with_POST(self):
         Education.objects.create(text='itemey 1',date='2020')
         response = self.c.post(self.url_edu,data={'text':'abc','date':'123'}
-        self.assertEqual(response.status_code, 302)
+        self.assertEquals(response.status_code, 302)
         self.assertTemplateUsed(response,'blog/cv/cvEducation.html')
-        self.assertEqual(Education.objects.count(),1)
+        self.assertEquals(Education.objects.count(),1)
         response = self.c.get('/cv')
         self.assertIn('itemey 1', response.content.decode())
 
