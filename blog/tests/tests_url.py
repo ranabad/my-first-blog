@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse,resolve
-from blog.views import EducationCV,CV,SkillsCV,WorkshopsCV,ExperienceCV,ContactCV,ContactCVMsg
+from blog.views import EducationCV,CV,SkillsCV,WorkshopsCV,ExperienceCV,ContactCV,ContactCVMsg,SkillsCVUpdatde
 
 
 class TestUrls(SimpleTestCase):
