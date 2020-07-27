@@ -30,7 +30,7 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         new_club = Education.objects.create({'text':'Cheddar Talk', 'date':'Thoughts on cheese.'})
+         new_club = Education.objects.create(text="hi",date="hello")
          self.client.post("cv/{}/Education/edit/".format(new_club.pk), data = {'text':'abc', 'date':'FAIL'})
          self.assertEqual(new_club.date, "FAIL")
          
