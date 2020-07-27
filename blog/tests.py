@@ -30,7 +30,8 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         update_url = reverse('/cv/{pk}/Education',pk=(Education.objects.first().pk))
+         
+         update_url =reverse("cv/:/Education/edit/", args=[self.kwargs['pk'])
             # GET the form
          r = self.client.get(update_url)
 
