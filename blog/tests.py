@@ -30,17 +30,24 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         editing=c.get('/cv/1:pk/Education/edit/')
-         EducationForm.clean
-         print("--------------------------------R-----------------------------------")
-         print(editing.content)
-         print("-------------------------------------------------------------------")
-         editing=c.post('/cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'1'})
-         editing.status_code
-         self.assertEqual(Education.objects.count(),1)
-         editing=c.get('/cv/Education')
-         print("-------------------------------------------------------------------")
-         print(editing.content)
+         update_url = reverse('/cv/{pk}/Education',pk=(Education.objects.first().pk))
+            # GET the form
+         r = self.client.get(update_url)
+
+            # retrieve form data as dict
+         form = r.context['form']
+         data = form.initial # form is unbound but contains data
+
+            # manipulate some data
+         data['field_to_be_changed'] = {'text':'work', 'date':'for me'}
+
+            # POST to the form
+         r = self.client.post(update_url, data)
+
+            # retrieve again
+         r = self.client.get(update_url)
+         self.assertContains(r, {'text':'work', 'date':'for me'})
+        
         
 
 
