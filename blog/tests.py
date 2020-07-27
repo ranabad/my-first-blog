@@ -33,7 +33,7 @@ class CVEducationTest(TestCase):
          posting=c.put("cv/Education/",{'text':'abc', 'date':'FAIL'})
          posting.status_code
          posting=c.get('/cv')
-         print(G.content)
+         print(posting.content)
          #self.assertEqual(new_club.date, "FAIL")
          
          
