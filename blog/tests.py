@@ -30,7 +30,7 @@ class CVEducationTest(TestCase):
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         posting=c.put("cv/Education/",{'text':'abc', 'date':'FAIL'})
+         posting=c.put("/1/Education/edit",{'text':'abc', 'date':'FAIL'})
          posting.status_code
          posting=c.get('/cv')
          print(posting.content)
