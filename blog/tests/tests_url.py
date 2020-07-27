@@ -4,7 +4,7 @@ from blog.views import EducationCV,CV,SkillsCV,WorkshopsCV,ExperienceCV,ContactC
 
 
 class TestUrls(SimpleTestCase):
-    def test_cv_edu_skills_workshop_exp_url_is_resolved(self):
+    def test_cv_edu_skills_workshop_exp_con_msg_url_is_resolved(self):
         url_skill=reverse('cvSkills')
         url_main=reverse('cv')
         url_workshop=reverse('cvWorkshop')
@@ -19,9 +19,15 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url_main).func,CV)
         self.assertEquals(resolve(url_skill).func,SkillsCV)
         self.assertEquals(resolve(url_workshop).func,WorkshopsCV)
+    def test_edu_skills_workshop_exp_update_url_is_resolved(self):
+        url_skill=reverse('cv_Skills_edit',args=['int'])
+        self.assertEquals(resolve(url_skill).func,SkillsCVUpdatde)
+
+
+        
+
+    
 
           
     
     
-    
-  
