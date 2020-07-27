@@ -1,7 +1,10 @@
-from django.test import TestCase,Client
-from django.urls import reverse
-from blog.models import Education,Experience,Skills,Contact,Workshops
 import json
+
+from django.contrib.auth.models import User
+from django.test import Client, TestCase
+from django.urls import reverse
+
+from blog.models import Contact, Education, Experience, Skills, Workshops
 
 
 class TestViews(TestCase):
@@ -26,6 +29,3 @@ class TestViews(TestCase):
         #self.assertEquals(self.edu.first().text,'abc')
         #self.assertEqual(Education.objects.count(),1)
         print(response.content)
-
-
-        
