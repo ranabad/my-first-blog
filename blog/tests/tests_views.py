@@ -19,5 +19,7 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code,302)
         #self.assertEquals(self.edu.first().text,'abc')
         self.assertEqual(Education.objects.count(),1)
+        print(response.content)
+
 
         
