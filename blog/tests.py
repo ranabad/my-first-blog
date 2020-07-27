@@ -30,7 +30,7 @@ class CVEducationTest(TestCase):
          self.assertEqual(posting.status_code, 302)
          self.assertEqual(posting['location'], '/cv/Education')
          self.assertEqual(Education.objects.count(),1)
-         posting=c.post('cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'FAIL'})
+         posting=c.get('cv/<1:pk>/Education/edit/')
          self.assertEqual(posting.status_code, 302)
          self.assertEqual(posting['location'], '/cv/1/Education/edit')
          posting.status_code
