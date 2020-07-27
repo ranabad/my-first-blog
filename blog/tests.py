@@ -32,12 +32,10 @@ class CVEducationTest(TestCase):
          print(posting.content)
          new_club = Education.objects.create(text="hi",date="hello")
          G=c.post("cv/{}/Education/edit/".format(new_club.pk), data = {'text':'abc', 'date':'FAIL'})
-         posting.status_code
+         new_club.refresh_from_db()
+         G.status_code
          G=c.get('/cv')
          print(G.content)
-
-         
-         new_club.refresh_from_db()
          #self.assertEqual(new_club.date, "FAIL")
          
          
