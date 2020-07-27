@@ -7,3 +7,4 @@ class TestUrls(SimpleTestCase):
     def test_Education_url_is_resolved(self):
         url=reverse('cvEducation')
         print(resolve(url))
+        self.assertEquals(resolve(url).func,EducationCV)
