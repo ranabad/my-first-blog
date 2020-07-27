@@ -9,5 +9,5 @@ class TestViews(TestCase):
         c=Client()
         response=c.get(reverse('cv'))
         self.assertEquals(response.status_code,200)
-        self.assertTemplateUsed(response,'/cv')
+        self.assertTemplateUsed(response,'blog/cv.html')
         
