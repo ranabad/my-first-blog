@@ -7,7 +7,13 @@ from django.utils import timezone
 from blog.forms import EducationForm, ExperienceForm, SkillsForm, WorkshopsForm
 from blog.models import Education, Experience, Skills, Workshops
 from blog.views import CV, EducationCV, ExperienceCV, SkillsCV, WorkshopsCV,EducationCVUpdatde
-
+   """       self.assertEqual(posting.status_code, 404)
+         posting=c.post('/cv/1/Education/edit/',{'text':'abc', 'date':'123'})
+         posting.status_code
+         print(posting.content)
+         posting=c.get('/cv')
+         print(posting.content)
+         self.assertEqual(Education.objects.count(),1) """
 
 class CVTestView(TestCase):
      def test_uses_CV_template(self):
@@ -30,16 +36,10 @@ class CVEducationTest(TestCase):
          self.assertEqual(posting.status_code, 302)
          self.assertEqual(posting['location'], '/cv/Education')
          self.assertEqual(Education.objects.count(),1)
-         posting=Education.objects.first()
+         posting=Education.objects.first
          print(posting.content)
          posting=c.get('/cv/1/Education/edit/')
-   """       self.assertEqual(posting.status_code, 404)
-         posting=c.post('/cv/1/Education/edit/',{'text':'abc', 'date':'123'})
-         posting.status_code
-         print(posting.content)
-         posting=c.get('/cv')
-         print(posting.content)
-         self.assertEqual(Education.objects.count(),1) """
+
          
          
         
