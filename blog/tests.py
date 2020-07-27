@@ -27,10 +27,12 @@ class CVEducationTest(TestCase):
          self.assertTrue(logged_in) 
          posting=c.post('/cv/Education',{'text':'Cheddar Talk', 'date':'Thoughts on cheese.'})
          posting.status_code
+         self.assertEqual(response.status_code, 302)
+         self.assertEqual(response['location'], '/cv/Education')
          self.assertEqual(Education.objects.count(),1)
          posting=c.get('/cv')
          print(posting.content)
-         posting=c.post('cv/<int:pk>/Education/edit/',{'text':'abc', 'date':'FAIL'})
+         posting=c.post('cv/<1:pk>/Education/edit/',{'text':'abc', 'date':'FAIL'})
          posting.status_code
          posting=c.get('/cv')
          print(posting.content)
@@ -41,10 +43,7 @@ class CVEducationTest(TestCase):
         
 
 
-     def test_redirects_after_POST_in_Education(self):
-         response = self.client.post('/cv/Education', data={'item_text': 'A new list item'})
-         self.assertEqual(response.status_code, 302)
-         self.assertEqual(response['location'], '/cv/Education')
+   
      def test_only_saves_items_when_necessary(self):
          self.client.get('/cv/Education')
          self.assertEqual(Education.objects.count(), 0)
