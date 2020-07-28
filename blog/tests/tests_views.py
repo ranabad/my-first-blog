@@ -23,8 +23,8 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response,'blog/cv.html')
     def test_CV_contents_with_POST(self):
         posting=self.c.post(self.url_edu,data={'text':'abc','date':'123'})
-        self.assertEquals(response.status_code,302)
-        self.assertTemplateUsed(response,'blog/cvEducation.html')
+        self.assertEquals(posting.status_code,302)
+        self.assertTemplateUsed(posting,'blog/cvEducation.html')
         
 
 
