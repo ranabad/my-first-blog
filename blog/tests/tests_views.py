@@ -30,7 +30,7 @@ class TestViews(TestCase):
         self.url_workshopDlt=reverse('cv_Workshop_dlt',args=[1])
         self.url_expDlt=reverse('cv_Experience_dlt',args=[1])
         self.url_eduDlt=reverse('cv_Education_dlt',args=[1])
-        self,url_msgDlt=reverse('msg_remove',args=[1])
+        self.url_msgDlt=reverse('msg_remove',args=[1])
     def test_CV_contents_GET(self):
         response=self.c.get(self.url_cv)
         self.assertEquals(response.status_code,200)
