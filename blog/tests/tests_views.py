@@ -82,7 +82,7 @@ class TestViews(TestCase):
     def test_CV_contents_with_Update_POST(self):
         obj=Education.objects.create(text='abc',date='123',grade='A')
         r=Education.objects.filter(pk=obj.pk)
-        print(str(r))
+        print(r)
         """ posting=self.c.post(self.url_eduUp,data={'text':'cab','date':'123'})
         self.assertEquals(posting.status_code,302)
         self.assertEqual(Education.objects.count(),1)
