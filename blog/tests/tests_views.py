@@ -24,6 +24,9 @@ class TestViews(TestCase):
     def test_CV_contents_with_POST(self):
         Education.objects.create(text='itemey 1',date='2020')
         self.assertEquals(Education.objects.count(),1)
+        posting=self.c.post(self.url_edu,Education.objects.first())
+        self.assertEquals(response.status_code,302)
+        self.assertTemplateUsed(response,'blog/cvEducation.html')
         
 
 
