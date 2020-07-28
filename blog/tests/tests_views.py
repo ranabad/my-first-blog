@@ -80,7 +80,7 @@ class TestViews(TestCase):
         response = self.c.get(self.url_msg)
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
-        Education.objects.create(text='abc')
+        obj=Education.objects.create(text='abc')
         r=Education.objects.filter(pk=obj.pk)
         print(str(r))
         """ posting=self.c.post(self.url_eduUp,data={'text':'cab','date':'123'})
