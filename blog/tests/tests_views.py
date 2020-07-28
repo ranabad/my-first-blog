@@ -77,8 +77,8 @@ class TestViews(TestCase):
         posting=self.c.post(self.url_con,data={'from_email':'testing@gmail.com','from_name':'tester','subject':'testing view','message':'lets see if view function for contact works'})
         self.assertEquals(posting.status_code,302)
         self.assertEqual(Contact.objects.count(),1)
-        response = self.client.get('/cv/Messages')
-        print(response.content)
+        response = self.client.get(self.url_msg)
+        self.assertIn('tester', response.content.decode())
         
         
         
