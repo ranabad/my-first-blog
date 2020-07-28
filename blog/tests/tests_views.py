@@ -59,6 +59,21 @@ class TestViews(TestCase):
         self.assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
         self.assertIn('abc', response.content.decode())
+        posting=self.c.post(self.url_skill,data={'text':'def','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Skills.objects.count(),1)
+        response = self.client.get('/cv')
+        self.assertIn('def', response.content.decode())
+        posting=self.c.post(self.url_workshop,data={'text':'ghi','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Workshops.objects.count(),1)
+        response = self.client.get('/cv')
+        self.assertIn('ghi', response.content.decode())
+        posting=self.c.post(self.url_exp,data={'text':'jkl','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Experience.objects.count(),1)
+        response = self.client.get('/cv')
+        self.assertIn('jkl', response.content.decode())
         
         
         
