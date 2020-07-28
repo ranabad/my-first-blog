@@ -81,8 +81,8 @@ class TestViews(TestCase):
         response = self.c.get(self.url_msg)
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
-        Education.objects.create(text='abc',date='123',id=1)
-        edu = Education.objects.get(pk=id)
+        Education.objects.create(text='abc',date='123')
+        edu = Education.objects.get(pk=1)
         self.url_eduUp=reverse('cv_Education_edit',args=[edu])
         posting=self.c.post(self.url_eduUp,data={'text':'cab','date':'123'})
         self.assertEquals(posting.status_code,302)
