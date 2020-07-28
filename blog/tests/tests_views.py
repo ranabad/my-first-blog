@@ -81,12 +81,13 @@ class TestViews(TestCase):
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
         Education.objects.create(text='abc')
-        print(Education.objects.all())
-        posting=self.c.post(self.url_eduUp,data={'text':'cab','date':'123'})
+        r=Education.objects.filter(pk=obj.pk)
+        print(str(r))
+        """ posting=self.c.post(self.url_eduUp,data={'text':'cab','date':'123'})
         self.assertEquals(posting.status_code,302)
         self.assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
-        self.assertIn('cab', response.content.decode())
+        self.assertIn('cab', response.content.decode()) """
 
 
 
