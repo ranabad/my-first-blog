@@ -27,6 +27,7 @@ class TestViews(TestCase):
         self.assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
         self.assertIn('abc', response.content.decode())
+        print(response.content)
         
         
 
