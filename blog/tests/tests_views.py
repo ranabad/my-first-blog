@@ -12,13 +12,13 @@ class TestViews(TestCase):
         user = User.objects.create(username='testuser')
         user.set_password('12345')
         user.save()
-        c = Client()
-        logged_in =c.login(username='testuser', password='12345')
+        self.c = Client()
+        logged_in =self.c.login(username='testuser', password='12345')
         self.assertTrue(logged_in) 
         self.url_cv=reverse('cv')
         self.url_edu=reverse('cvEducation')  
     def test_CV_contents_GET(self):
-        response=c.get(self.url_cv)
+        response=self.c.get(self.url_cv)
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response,'blog/cv.html')
     def test_CV_contents_with_POST(self):
