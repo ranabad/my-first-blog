@@ -28,8 +28,7 @@ class TestViews(TestCase):
         #self.assertEqual(response.status_code, 302)
         #self.assertTemplateUsed(response,'blog/cv/cvEducation.html')
         #self.assertEquals(Education.objects.count(),1)
-        response = self.c.get('/cv')
-        self.assertIn('itemey 1', response.content.decode())
+        print(response.content)
 
 
         
