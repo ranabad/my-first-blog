@@ -74,6 +74,11 @@ class TestViews(TestCase):
         self.assertEqual(Experience.objects.count(),1)
         response = self.client.get('/cv')
         self.assertIn('jkl', response.content.decode())
+        posting=self.c.post(self.url_con,data={'from_email':'testing@gmail.com','from_name':'tester','subject':'testing view','message':'lets see if view function for contact works'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Contact.objects.count(),1)
+        response = self.client.get('/cv/Messages')
+        self.assertIn('tester', response.content.decode())
         
         
         
