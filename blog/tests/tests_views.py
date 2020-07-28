@@ -25,6 +25,8 @@ class TestViews(TestCase):
         posting=self.c.post(self.url_edu,data={'text':'abc','date':'123'})
         self.assertEquals(posting.status_code,302)
         self.assertEqual(Education.objects.count(),1)
+        response = self.client.get('/cv')
+        self.assertIn('abc', response.content.decode())
         
         
 
