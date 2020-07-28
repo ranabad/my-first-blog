@@ -78,7 +78,7 @@ class TestViews(TestCase):
         self.assertEquals(posting.status_code,302)
         self.assertEqual(Contact.objects.count(),1)
         response = self.c.get(self.url_msg)
-        print(response.content)
+        self.assertIn('tester', response.content.decode())
         
         
         
