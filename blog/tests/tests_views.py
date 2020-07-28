@@ -24,7 +24,7 @@ class TestViews(TestCase):
     def test_CV_contents_with_POST(self):
         Education.objects.create(text='itemey 1',date='2020')
         self.assertEquals(Education.objects.count(),1)
-        print(response.content)
+        
 
 
         
