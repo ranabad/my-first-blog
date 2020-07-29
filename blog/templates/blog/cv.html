@@ -34,7 +34,8 @@
   
   {% extends "blog/base.html" %}
   
-  {% block content %}
+  
+  
   <html>
   
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -95,7 +96,7 @@
         {% if user.is_authenticated %}
         <h3 style=" font-size: 12pt;"><a href="{% url 'msg' %}" > Messages <Form></Form> <small></small></p></a></h3>
         {% endif %}
-        
+        {% block content %}
 
       </div>
     </div>
