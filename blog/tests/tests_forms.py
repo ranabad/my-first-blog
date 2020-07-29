@@ -15,5 +15,5 @@ class testForms(SimpleTestCase):
         self.assertTrue(form.is_valid())
         form=WorkshopsForm(data={'text':'abc','date':'123'})
         self.assertTrue(form.is_valid())
-        form=EducationForm(data={'text':'abc'})
+        form=SkillsForm(data={'text':'abc'})
         self.assertTrue(form.is_valid())
