@@ -34,8 +34,7 @@
   
   {% extends "blog/base.html" %}
   
-  
-  
+  {% block content %}
   <html>
   
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -43,19 +42,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <body>
   
-    <div class="page-header">
-      {% if user.is_authenticated %}
-     
-          <p class="top-menu">Hello {{ user.username }} <small>(<a style="color:#86C232;" href="{% url 'logout' %}">Log out</a>)</small></p>
-
-
-      {% else %}
-          <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-          
-
-      {% endif %}
-      <h1><a href="/">Rana's AL Badrani</a></h1>
-      </div>
+    {% block head %} <h1><a href="/">Rana AL Badrani</a></h1>  {% endblock %}
   
   
       <!-- Left Column -->
@@ -96,7 +83,7 @@
         {% if user.is_authenticated %}
         <h3 style=" font-size: 12pt;"><a href="{% url 'msg' %}" > Messages <Form></Form> <small></small></p></a></h3>
         {% endif %}
-        {% block content %}
+        
 
       </div>
     </div>
