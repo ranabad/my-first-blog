@@ -31,6 +31,7 @@ class ModelTest(TestCase):
          second_saved_item = saved_items[1]
          self.assertEqual(first_saved_item.text, 'ghi')
          self.assertEqual(second_saved_item.text, 'jkl')
+         self.assertEquals(Experience.objects.first().date,'Present')
          first_item = Experience()
          first_item.text = 'mno'
          first_item.save()
