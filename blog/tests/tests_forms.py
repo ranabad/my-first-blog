@@ -9,3 +9,5 @@ class testForms(SimpleTestCase):
     def test_form_valid_data(self):
         form=ContactForm(data={'from_email':'123@gmail.com','from_name':'tester','subject':'modeltest','message':'testing forms now'})
         self.assertTrue(form.is_valid())
+        form=EducationForm(data={'text':'abc'})
+        self.assertTrue(form.is_valid())
