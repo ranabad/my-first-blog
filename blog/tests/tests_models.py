@@ -58,6 +58,19 @@ class ModelTest(TestCase):
          self.assertEqual(first_saved_item.text, 'stu')
          self.assertEqual(second_saved_item.text, 'vwx') 
          self.assertEquals(Workshops.objects.first().date,'Present')
+         first_item = Contact()
+         first_item.from_email = '123@gmail.com'
+         first_item.from_name = 'tester'
+         first_item.subject = 'modeltest'
+         first_item.message = 'testing model Contact'
+         first_item.save()
+         saved_items = Contact.objects.all()
+         self.assertEqual(saved_items.count(), 1)
+         first_saved_item = saved_items[0]
+         self.assertEqual(first_item.from_email, '123@gmail.com')
+         self.assertEqual(first_item.subject, 'modeltest') 
+         
+
 
 
 
