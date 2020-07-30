@@ -12,7 +12,7 @@ from .models import Comment, Contact,Education, Experience, Post, Skills, Worksh
 
 def CV(request):
   if request.method == 'GET':
-        items=Education.objects.all().order_by('-text')
+        items=Education.objects.all()
         skills=Skills.objects.all()
         work=Workshops.objects.all()
         exp=Experience.objects.all()
