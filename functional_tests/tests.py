@@ -12,9 +12,9 @@ import unittest
 
 from django.test import LiveServerTestCase
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 from pyvirtualdisplay import Display
-
 
 display = Display(visible=0, size=(800, 600))
 display.start()
@@ -27,12 +27,15 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.quit()
         display.stop() 
 
-    def test_can_start_show_cv_page(self):  
+    def test_can_user__can_and__view_cv_page(self):  
+       self.browser.get('https://ranabad.pythonanywhere.com')
+       inputbox = self.browser.find_element_by_class_name(glyphicon glyphicon-file)
+       inputbox.send_keys(Keys.ENTER)
+       self.assertIn('/cv',self.browser.current_url)
        self.browser.get('https://ranabad.pythonanywhere.com/cv')
        self.assertIn("Rana's Personal Blog", self.browser.title)
        html = self.browser.page_source
-       time.sleep(10)
-       print(str(html))
+       self.assertIn()
 
 if __name__ == '__main__':  
     unittest.main(warnings='ignore')    
