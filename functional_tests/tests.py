@@ -31,7 +31,7 @@ class NewVisitorTest(unittest.TestCase):
        self.browser.get('https://ranabad.pythonanywhere.com')
        inputbox = self.browser.find_element_by_class_name('glyphicon-file')
        inputbox.send_keys(Keys.ENTER)
-       self.assertIn('/cv',self.browser.current_url)
+       self.assertIn('https://ranabad.pythonanywhere.com/cv',self.browser.current_url)
        self.browser.get('https://ranabad.pythonanywhere.com/cv')
        self.assertIn("Rana's Personal Blog", self.browser.title)
        html = self.browser.page_source
