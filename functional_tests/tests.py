@@ -29,7 +29,7 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_user__can_and__view_cv_page(self):  
        self.browser.get('https://ranabad.pythonanywhere.com')
-       inputbox = self.browser.find_element_by_class_name(glyphicon glyphicon-file)
+       inputbox = self.browser.find_element_by_class_name('glyphicon-file')
        inputbox.send_keys(Keys.ENTER)
        self.assertIn('/cv',self.browser.current_url)
        self.browser.get('https://ranabad.pythonanywhere.com/cv')
