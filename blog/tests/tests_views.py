@@ -5,7 +5,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from blog.models import Contact, Education, Experience, Skills, Workshops
-from views import EducationCVUpdatde
+from blog.views import EducationCVUpdatde
 
 
 class TestViews(TestCase):
