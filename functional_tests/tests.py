@@ -29,13 +29,13 @@ class NewVisitorTest(unittest.TestCase):
 
     def test_can_user__can_and__view_cv_page(self):  
        self.browser.get('https://ranabad.pythonanywhere.com')
-       inputbox = self.browser.find_element_by_class_name('glyphicon-file')
+       inputbox = self.browser.find_element_by_class_name('glyphicon glyphicon-file)
        inputbox.send_keys(Keys.ENTER)
        self.assertIn('https://ranabad.pythonanywhere.com/cv',self.browser.current_url)
        self.browser.get('https://ranabad.pythonanywhere.com/cv')
        self.assertIn("Rana's Personal Blog", self.browser.title)
        html = self.browser.page_source
-       self.assertIn()
+       
 
 if __name__ == '__main__':  
     unittest.main(warnings='ignore')    
