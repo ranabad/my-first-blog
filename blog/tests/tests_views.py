@@ -5,6 +5,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from blog.models import Contact, Education, Experience, Skills, Workshops
+from views import EducationCVUpdatde
 
 
 class TestViews(TestCase):
@@ -80,10 +81,11 @@ class TestViews(TestCase):
         response = self.c.get(self.url_msg)
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
-        self.Education.objects.create(text='abc',date='123')
-        self.posting=self.c.get(self.url_eduUp)
-        self.posting=self.post(self.url_eduUp,data={'text':'cab','date':'321'})
-        self.assertEquals(posting.status_code,302)
-        self.assertEqual(Education.objects.count(),1)
-        self.response = self.client.get('/cv')
-        self.assertIn('cab', response.content.decode()) 
+        Education.objects.create(text='abc',date='123')
+        posting=self.c.get(self.url_eduUp)
+        posting = EducationCVUpdatde.as_view()(request, pk=1)
+        posting=self.post(self.url_eduUp,data={'text':'cab','date':'321'})
+        assertEquals(posting.status_code,302)
+        assertEqual(Education.objects.count(),1)
+        response = self.client.get('/cv')
+        assertIn('cab', response.content.decode()) 
