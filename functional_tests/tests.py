@@ -1,6 +1,6 @@
 """I wont test whether Post Method works because USER MUST BE ADMIN (ME)
   
-    so functional test shows that browser can load up cv page 
+    so functional test shows that browser can load up cv page it checks that button to link works for user and
 
     it prints out for vistors that are not the admin(ME) the basic html 
     
@@ -35,6 +35,7 @@ class NewVisitorTest(unittest.TestCase):
        self.browser.get('https://ranabad.pythonanywhere.com/cv')
        self.assertIn("Rana's Personal Blog", self.browser.title)
        html = self.browser.page_source
+       print(html)
        
 
 if __name__ == '__main__':  
