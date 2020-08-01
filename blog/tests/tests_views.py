@@ -82,8 +82,8 @@ class TestViews(TestCase):
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
         Education.objects.create(text='abc',date='123')
-        posting=self.c.post(reverse('cv_Education_edit',args=[posting.pk]),data={'text':'abc','date':'123'},follow=True)
-        posting=self.c.post(,data={'text':'cab','date':'321'})
+        posting=self.c.post(self.url_edu,data={'text':'abc','date':'123'},follow=True)
+        posting=self.c.post(reverse('cv_Education_edit',args=[posting.pk]),data={'text':'cab','date':'321'})
         assertEquals(posting.status_code,302)
         assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
