@@ -106,6 +106,22 @@ class TestViews(TestCase):
         self.assertEqual(Experience.objects.count(),1)
         response = self.client.get('/cv')
         self.assertIn('jkl', response.content.decode())
+    def test_CV_contents_with_Dlt_POST(self):
+        Education.objects.create(id=1,text='q',date='a',grade='s')
+        posting=posting=self.c.delete(self.url_eduDlt)
+        self.assertEqual(Education.objects.count(),0)
+        Skills.objects.create(id=1,text='q')
+        posting=posting=self.c.delete(self.url_skillDlt)
+        self.assertEqual(Skills.objects.count(),0)
+        Workshops.objects.create(id=1,text='q',date='a')
+        posting=posting=self.c.delete(self.url_workshopDlt)
+        self.assertEqual(Workshops.objects.count(),0)
+        Experience.objects.create(id=1,text='q',date='a')
+        posting=posting=self.c.delete(self.url_expDlt)
+        self.assertEqual(Experience.objects.count(),0)
+        Contact.objects.create(id=1 ,from_email ='123@gmail.com',from_name='tester',subject ='views testing',message ='testing that views can delete id')
+        posting=posting=self.c.delete(self.url_msgDlt)
+        self.assertEqual(Contact.objects.count(),0)  
 
         
 
