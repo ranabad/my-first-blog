@@ -83,11 +83,30 @@ class TestViews(TestCase):
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
         Education.objects.create(id=1,text='q',date='a',grade='s')
-        posting=posting=self.c.post(self.url_eduUp,data={'text':'ghi','date':'123'})
+        posting=posting=self.c.post(self.url_eduUp,data={'text':'abc','date':'123'})
         self.assertEquals(posting.status_code,302)
         self.assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
+        self.assertIn('abc', response.content.decode())
+        Skills.objects.create(id=1,text='q',date='a',grade='s')
+        posting=posting=self.c.post(self.url_skillUp,data={'text':'def','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Skills.objects.count(),1)
+        response = self.client.get('/cv')
+        self.assertIn('def', response.content.decode())
+        Workshops.objects.create(id=1,text='q',date='a',grade='s')
+        posting=posting=self.c.post(self.url_workshopUp,data={'text':'ghi','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Workshops.objects.count(),1)
+        response = self.client.get('/cv')
         self.assertIn('ghi', response.content.decode())
-        print(response.content)
+        Experience.objects.create(id=1,text='q',date='a',grade='s')
+        posting=posting=self.c.post(self.url_expUp,data={'text':'jkl','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Experience.objects.count(),1)
+        response = self.client.get('/cv')
+        self.assertIn('jkl', response.content.decode())
+
+        
 
 
