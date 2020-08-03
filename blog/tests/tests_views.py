@@ -85,7 +85,7 @@ class TestViews(TestCase):
         Education.objects.create(id=1,text='q',date='a',grade='s')
         posting=posting=self.c.post(self.url_eduUp,data={'text':'ghi','date':'123'})
         self.assertEquals(posting.status_code,302)
-        self.assertEqual(Workshops.objects.count(),1)
+        self.assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
         self.assertIn('ghi', response.content.decode())
 
