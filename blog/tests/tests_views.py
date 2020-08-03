@@ -1,7 +1,5 @@
-import json
 
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, redirect, render
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -108,21 +106,17 @@ class TestViews(TestCase):
         self.assertIn('jkl', response.content.decode())
     def test_CV_contents_with_Dlt_POST(self):
         Education.objects.create(id=1,text='q',date='a',grade='s')
-        posting=posting=self.c.delete(self.url_eduDlt,json.dumps({'id':1}))
+        posting=posting=self.c.delete(self.url_eduDlt,Education.objects.first().delete())
         self.assertEqual(Education.objects.count(),0)
         Skills.objects.create(id=1,text='q')
-        posting=posting=self.c.delete(self.url_skillDlt,json.dumps({'id':1}))
+        posting=posting=self.c.delete(self.url_skillDlt,Skills.objects.first().delete())
         self.assertEqual(Skills.objects.count(),0)
         Workshops.objects.create(id=1,text='q',date='a')
-        posting=posting=self.c.delete(self.url_workshopDlt,json.dumps({'id':1}))
+        posting=posting=self.c.delete(self.url_workshopDlt,Workshops.objects.first().delete())
         self.assertEqual(Workshops.objects.count(),0)
         Experience.objects.create(id=1,text='q',date='a')
-        posting=posting=self.c.delete(self.url_expDlt,json.dumps({'id':1}))
+        posting=posting=self.c.delete(self.url_expDlt,Experience.objects.first().delete())
         self.assertEqual(Experience.objects.count(),0)
         Contact.objects.create(id=1 ,from_email ='123@gmail.com',from_name='tester',subject ='views testing',message ='testing that views can delete id')
-        posting=posting=self.c.delete(self.url_msgDlt,json.dumps({'id':1}))
+        posting=posting=self.c.delete(self.url_msgDlt,Contact.objects.first().delete())
         self.assertEqual(Contact.objects.count(),0)  
-
-        
-
-
