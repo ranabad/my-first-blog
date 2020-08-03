@@ -1,6 +1,7 @@
 import json
 
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404, redirect, render
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -81,9 +82,11 @@ class TestViews(TestCase):
         response = self.c.get(self.url_msg)
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
-        posting=self.c.post(self.url_edu,data={'text':'abc','date':'123'},follow=True)
-        posting=self.c.post(reverse('cv_Education_edit',args=[posting.pk]),data={'text':'cab','date':'321'})
+        
+        posting=EducationCVUpdatde(self.url_edu, pk)
+        items = Education.objects.get(pk=pk)
+        s=Education.objects.create(text='1',datde='2',grade='s')
+        print(items)
         assertEquals(posting.status_code,302)
         assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
-        assertIn('cab', response.content.decode()) 
