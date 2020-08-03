@@ -82,10 +82,8 @@ class TestViews(TestCase):
         response = self.c.get(self.url_msg)
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
-        
-        posting=EducationCVUpdatde(self.url_edu, pk)
-        items = Education.objects.get(pk=pk)
         s=Education.objects.create(text='1',datde='2',grade='s')
+        items = Education.objects.get(pk=pk)
         print(items)
         assertEquals(posting.status_code,302)
         assertEqual(Education.objects.count(),1)
