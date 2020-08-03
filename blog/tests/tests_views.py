@@ -82,9 +82,11 @@ class TestViews(TestCase):
         response = self.c.get(self.url_msg)
         self.assertIn('tester', response.content.decode())
     def test_CV_contents_with_Update_POST(self):
-        s=Education.objects.create(text='1',date='2',grade='s')
-        items = Education.objects.get(pk=pk)
-        print(items)
-        assertEquals(posting.status_code,302)
-        assertEqual(Education.objects.count(),1)
+        Education.objects.create(id=1,text='q',date='a',grade='s')
+        posting=posting=self.c.post(self.url_eduUp,data={'text':'ghi','date':'123'})
+        self.assertEquals(posting.status_code,302)
+        self.assertEqual(Workshops.objects.count(),1)
         response = self.client.get('/cv')
+        self.assertIn('ghi', response.content.decode())
+
+
