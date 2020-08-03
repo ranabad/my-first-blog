@@ -88,6 +88,6 @@ class TestViews(TestCase):
         self.assertEqual(Education.objects.count(),1)
         response = self.client.get('/cv')
         self.assertIn('ghi', response.content.decode())
-        print(response)
+        print(response.content)
 
 
