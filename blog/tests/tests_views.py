@@ -105,10 +105,10 @@ class TestViews(TestCase):
         response = self.client.get('/cv')
         self.assertIn('jkl', response.content.decode())
     def test_CV_contents_with_Dlt_POST(self):
-        item=Education.objects.create(id=1,text='q',date='a',grade='s')
-        posting=posting=self.c.post(self.url_eduDlt,item.delete())
+        Education.objects.create(id=1,text='q',date='a',grade='s')
+        posting=posting=self.c.post(self.url_eduDlt,id=1,text='q',date='a',grade='s')
         self.assertEqual(Education.objects.count(),0)
-        item=Skills.objects.create(id=1,text='q')
+        """ item=Skills.objects.create(id=1,text='q')
         posting=posting=self.c.post(self.url_skillDlt,item.delete())
         self.assertEqual(Skills.objects.count(),0)
         item=Workshops.objects.create(id=1,text='q',date='a')
@@ -119,4 +119,4 @@ class TestViews(TestCase):
         self.assertEqual(Experience.objects.count(),0)
         item=Contact.objects.create(id=1 ,from_email ='123@gmail.com',from_name='tester',subject ='views testing',message ='testing that views can delete id')
         posting=posting=self.c.post(self.url_msgDlt,item.delete())
-        self.assertEqual(Contact.objects.count(),0)  
+        self.assertEqual(Contact.objects.count(),0)  """
