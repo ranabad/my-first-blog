@@ -79,7 +79,7 @@
         <p>Meditation, Traveling, Event Planning</p>
         <hr style=" border: 1px solid; color: #6b6e70;">
         <p class="w3-large w3-text-theme"><b><i style="color:#86C232;" class="fa fa-envelope fa-fw w3-margin-right"></i>Contact</b></p>
-        <h3 style=" font-size: 12pt;"><a href="{% url 'contact' %}" > Click here to send a Message to Rana AL Badrani <Form></Form> <small></small></p></a></h3>
+        <h3 style=" font-size: 12pt;"><a href="{% url 'contact' %}" > Click here to send a message to Rana Al Badrani <Form></Form> <small></small></p></a></h3>
         {% if user.is_authenticated %}
         <h3 style=" font-size: 12pt;"><a href="{% url 'msg' %}" > Messages <Form></Form> <small></small></p></a></h3>
         {% endif %}
@@ -115,7 +115,7 @@
        {% if user.is_authenticated %}
        <h3 style=" font-size: 20pt;"><a href="{% url 'cvEducation' %}" > Education <small></small></p></a></h3>
        {%else%}
-       <h3 >Education</h3>
+       <h3 style=" font-size: 20pt;" >Education</h3>
        {% endif %}
       
         {% for items in items %}
@@ -134,7 +134,7 @@
         {% if user.is_authenticated %}
         <h4 style=" font-size: 20pt;"><a href="{% url 'cvSkills' %}" >Skills <small></small></p></a></h4>
         {%else%}
-         <h4 >Skills</h4>
+         <h4 style=" font-size: 20pt;" >Skills</h4>
         {% endif %}
         
           {% for skills in skills %}
@@ -151,7 +151,7 @@
           {% if user.is_authenticated %}
           <h5 style=" font-size: 20pt;" ><a href="{% url 'cvExperience' %}" > Experience <small></small></p></a></h5>
           {%else%}
-          <h5 >Experience</h5>
+          <h5  style=" font-size: 20pt;">Experience</h5>
           {% endif %}
           
             {% for exp in exp %}
@@ -171,7 +171,7 @@
           {% if user.is_authenticated %}
           <h6 style=" font-size: 20pt;" ><a href="{% url 'cvWorkshop' %}" > Workshops <small></small></p></a></h6>
           {%else%}
-          <h6 >Workshops</h6>
+          <h6 style=" font-size: 20pt;">Workshops</h6>
           {% endif %}
           
             {% for work in work%}
